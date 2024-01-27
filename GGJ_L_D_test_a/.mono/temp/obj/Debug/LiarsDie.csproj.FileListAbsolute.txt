@@ -1,0 +1,7 @@
+E:\LiarsDie\.mono\temp\bin\Debug\LiarsDie.dll
+E:\LiarsDie\.mono\temp\bin\Debug\LiarsDie.pdb
+E:\LiarsDie\.mono\temp\obj\Debug\LiarsDie.csprojAssemblyReference.cache
+E:\LiarsDie\.mono\temp\obj\Debug\LiarsDie.AssemblyInfoInputs.cache
+E:\LiarsDie\.mono\temp\obj\Debug\LiarsDie.AssemblyInfo.cs
+E:\LiarsDie\.mono\temp\obj\Debug\LiarsDie.dll
+E:\LiarsDie\.mono\temp\obj\Debug\LiarsDie.pdb

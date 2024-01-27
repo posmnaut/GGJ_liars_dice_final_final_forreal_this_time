@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ODsDzp5gyrS12AWoKgulmT78B8zL+Jx4vuhkedx7m2nb7eOyf9Y27naIdYeDAMW4It3VuI6aaEVL1zatltYWZg==",
+  "success": true,
+  "projectFilePath": "D:\\Godot_mono_install\\GGJ_L_D_test_a\\LiarsDie.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\desig\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "C:\\Users\\desig\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
+    "C:\\Users\\desig\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

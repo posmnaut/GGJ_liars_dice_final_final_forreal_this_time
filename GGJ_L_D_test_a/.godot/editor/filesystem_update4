@@ -1,0 +1,11 @@
+res://default_env.tres
+res://Scenes/Main.tscn
+res://Scripts/BidSelect.cs
+res://Scenes/BidSelect.tscn
+res://Scenes/StartGame.tscn
+res://Scripts/Dice.cs
+res://Scripts/Main.cs
+res://Scripts/PlayerCamera.cs
+res://Scripts/PlayerCup.cs
+res://Scripts/StartGame.cs
+res://Scripts/Warden.cs
