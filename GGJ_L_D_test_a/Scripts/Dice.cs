@@ -43,7 +43,7 @@ public partial class Dice : Node3D
         faceLabel = GetTree().Root.GetChild(0).GetChild(3).GetChild<Label3D>(7);
         
         warden = GetTree().Root.GetChild(0).GetChild<Warden>(2);
-        playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild<PlayerCamera>(0);
+        playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
