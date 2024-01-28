@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706416241
-default_env.tres::Environment::1201141252749600035::1706416221::0::1::::<><>::
+::res://::1706417290
+default_env.tres::Environment::1201141252749600035::1706417199::0::1::::<><>::
 icon.png::CompressedTexture2D::3001240521696526294::1706393166::1706393166::1::::<><>::
 ::res://Resources/::1706407764
 BidSelecting1MP3.mp3::AudioStreamMP3::7848335755134830936::1706393166::1706393166::1::::<><>::
@@ -56,13 +56,13 @@ Up-Down-Buttons.003.tres::StandardMaterial3D::7580385667420096296::1706407764::0
 Up-Down-Buttons.tres::StandardMaterial3D::9082219474213154348::1706407764::0::1::::<><>::uid://f63v7cil0yi1::::res://Resources/Demo-Scene_UpDown-Button-diffuse.png
 Walls.tres::StandardMaterial3D::8144287330147304972::1706407764::0::1::::<><>::uid://cc5txs30ioi4a::::res://Resources/Demo-Scene_DecalLeakingMossy (6).png
 WindowMan.tres::StandardMaterial3D::5708720308315580596::1706407764::0::1::::<><>::uid://darm26ormg1qt::::res://Resources/Demo-Scene_ch_factory_windows1.png
-::res://Scenes/::1706416222
-BidSelect.tscn::PackedScene::6641013949596527395::1706415190::0::1::::<><>::res://Scripts/BidSelect.cs<>uid://cujtjeaj508ff::::res://Resources/SubmitClicked1MP3.mp3<>uid://bvntb47huuv4k::::res://Resources/ButtonModels/button-down1_UpDown-Button-diffuse.png<>uid://2l1u615dgjfj::::res://Resources/SubmitClicked2MP3.mp3
-Main.gd::GDScript::-1::1706415235::0::1::::<>Node<>::
-Main.tscn::PackedScene::5668335750160806996::1706416222::0::1::::<><>::res://Scenes/Main.gd<>res://Scripts/PlayerCamera.cs<>res://Scripts/PlayerCup.cs<>res://Scripts/Warden.cs<>res://Scripts/Dice.cs<>uid://4gfegqw7i7n1::::res://Resources/CupLift.mp3<>uid://b3vp0u38hwfs4::::res://Resources/CupShakeUSE.mp3<>uid://beypcyahu077c::::res://Resources/CupLift2USE.mp3<>uid://c1u7sac5vs1tv::::res://Scenes/BidSelect.tscn<>uid://dj217cm0ml1jg::::res://Resources/BidSelecting1MP3.mp3<>uid://c7i8jj06bgp43::::res://Resources/PlayerWonBluff2MP3.mp3<>uid://d1mbm587tpb38::::res://Resources/PlayerWonBluff1MP3.mp3<>uid://bgtkd4acb0wo1::::res://Scenes/StartGame.tscn<>uid://dvvt3hyeecufs::::res://Resources/Demo-Scene/Demo-Scene_Buttons-diffuse.png<>uid://5rk7gpifa0xn::::res://Resources/Demo-Scene/Demo-Scene_UpDown-Button-diffuse.png<>uid://dh78eqfpny4eh::::res://Resources/Demo-Scene/Demo-Scene_TV-Diffuse.png<>uid://c3dp554uu2f8h::::res://Resources/Demo-Scene/Demo-Scene_DecalLeakingMossy (6).png<>uid://cxa408fwpgc0g::::res://Resources/Demo-Scene/Demo-Scene_ch_factory_windows1.png
-StartGame.tscn::PackedScene::2847390973428180326::1706415190::0::1::::<><>::res://Scripts/StartGame.cs<>uid://dc24iexa30sdm::::res://Resources/ThemeTest1.wav
-::res://Scripts/::1706415730
-BidSelect.cs::CSharpScript::-1::1706415730::0::1::::<>Node3D<>::
+::res://Scenes/::1706417199
+BidSelect.tscn::PackedScene::6641013949596527395::1706417125::0::1::::<><>::res://Scripts/BidSelect.cs<>uid://cujtjeaj508ff::::res://Resources/SubmitClicked1MP3.mp3<>uid://bvntb47huuv4k::::res://Resources/ButtonModels/button-down1_UpDown-Button-diffuse.png<>uid://2l1u615dgjfj::::res://Resources/SubmitClicked2MP3.mp3
+Main.gd::GDScript::-1::1706416999::0::1::::<>Node<>::
+Main.tscn::PackedScene::5668335750160806996::1706417199::0::1::::<><>::res://Scenes/Main.gd<>res://Scripts/PlayerCamera.cs<>res://Scripts/PlayerCup.cs<>res://Scripts/Warden.cs<>res://Scripts/Dice.cs<>uid://4gfegqw7i7n1::::res://Resources/CupLift.mp3<>uid://b3vp0u38hwfs4::::res://Resources/CupShakeUSE.mp3<>uid://beypcyahu077c::::res://Resources/CupLift2USE.mp3<>uid://c1u7sac5vs1tv::::res://Scenes/BidSelect.tscn<>uid://dj217cm0ml1jg::::res://Resources/BidSelecting1MP3.mp3<>uid://c7i8jj06bgp43::::res://Resources/PlayerWonBluff2MP3.mp3<>uid://d1mbm587tpb38::::res://Resources/PlayerWonBluff1MP3.mp3<>uid://bgtkd4acb0wo1::::res://Scenes/StartGame.tscn<>uid://dvvt3hyeecufs::::res://Resources/Demo-Scene/Demo-Scene_Buttons-diffuse.png<>uid://5rk7gpifa0xn::::res://Resources/Demo-Scene/Demo-Scene_UpDown-Button-diffuse.png<>uid://dh78eqfpny4eh::::res://Resources/Demo-Scene/Demo-Scene_TV-Diffuse.png<>uid://c3dp554uu2f8h::::res://Resources/Demo-Scene/Demo-Scene_DecalLeakingMossy (6).png<>uid://cxa408fwpgc0g::::res://Resources/Demo-Scene/Demo-Scene_ch_factory_windows1.png
+StartGame.tscn::PackedScene::2847390973428180326::1706417125::0::1::::<><>::res://Scripts/StartGame.cs<>uid://dc24iexa30sdm::::res://Resources/ThemeTest1.wav
+::res://Scripts/::1706417188
+BidSelect.cs::CSharpScript::-1::1706417188::0::1::::<>Node3D<>::
 Dice.cs::CSharpScript::-1::1706407764::0::1::::<>Node3D<>::
 Main.cs::CSharpScript::-1::1706407764::0::1::::<>Node<>::
 PlayerCamera.cs::CSharpScript::-1::1706407764::0::1::::<>Camera3D<>::
