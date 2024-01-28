@@ -3,6 +3,9 @@ using System;
 
 public partial class BidSelect : Node3D
 {
+	//call ButtAnim to trigger button animations plus value 0-5 for buttons (more info in Main.GD)
+	[Signal]
+	public delegate void ButtonAnimEventHandler(int button);
 	[Signal]
 	public delegate void FaceIncreaseInputHandlerEventHandler();
 	[Signal]
@@ -15,6 +18,7 @@ public partial class BidSelect : Node3D
 	public delegate void SubmitInputHandlerEventHandler();
 	[Signal]
 	public delegate void BluffInputHandlerEventHandler();
+
 
 	Random randNumGen = new Random();
 	AudioStreamPlayer3D SC1Audio;
@@ -103,4 +107,5 @@ public partial class BidSelect : Node3D
 			EmitSignal("BluffInputHandler");
 		}
 	}
+	
 }

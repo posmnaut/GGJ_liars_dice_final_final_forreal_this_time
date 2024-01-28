@@ -1,24 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "808wdzRGVLb2stxw1Dd96sjh2ioGYz2CnAOAUJYq8Swk0WtMI9tm2Y2ALnTJvDRxCIR098eAdkEqDzPCWoDH/w==",
+  "dgSpecHash": "13nK7FV5gHix0VNpDhyJWBcGEYutRWDG8s5+fMtG2IY8Y9u7HJnYyJ4L0kjEcZZtT3780Z4FZClY1DFYD/xxBw==",
   "success": true,
-  "projectFilePath": "E:\\LiarsDie4.0\\LiarsDie.csproj",
+  "projectFilePath": "D:\\Godot Projects\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\alexm\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
-    "C:\\Users\\alexm\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
-    "C:\\Users\\alexm\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512",
-    "C:\\Users\\alexm\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512"
+    "C:\\Users\\desig\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "C:\\Users\\desig\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
+    "C:\\Users\\desig\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512",
+    "C:\\Users\\desig\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Newtonsoft.Json' 11.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
-      "libraryId": "Newtonsoft.Json",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }
