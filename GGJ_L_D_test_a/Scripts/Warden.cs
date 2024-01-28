@@ -8,6 +8,12 @@ public partial class Warden : Node3D
     public delegate void WBidMadeEventHandler(int highestFreq, int highestFace);
     [Signal]
     public delegate void WBluffEventHandler();
+    [Signal]
+    public delegate void NoEyeContactEventHandler();
+    [Signal]
+    public delegate void PlayerWonBluffEventHandler();
+    [Signal]
+    public delegate void WardenWonBluffEventHandler();
 
     Random randNumGen = new Random();
     Label3D wardenLabel;
@@ -19,7 +25,7 @@ public partial class Warden : Node3D
     AudioStreamPlayer3D PWB2Audio;
     PlayerCamera playerCam;
     public bool playerFirst {get; set;} = false;
-    bool initialBid = true;
+    public bool initialBid = true;
     public int[] dieArray {get; set;} = new int[5];
     //`Array` instance used to keep track of the frequency of each die.
     int[] freqArray = new int[6];
@@ -49,7 +55,7 @@ public partial class Warden : Node3D
         PWB1Audio = GetTree().Root.GetChild(0).GetChild(2).GetChild<AudioStreamPlayer3D>(5);
         PWB2Audio = GetTree().Root.GetChild(0).GetChild(2).GetChild<AudioStreamPlayer3D>(6);
 
-        playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild<PlayerCamera>(0);
+        playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,6 +70,7 @@ public partial class Warden : Node3D
     }
 
     public void _on_player_camera_no_eye_contact(){
+        EmitSignal("NoEyeContact");
         wardenLabel.Visible = true;
         wardenLabel.Text = "Come on, look at me! We want it to be fair, don't we!";
         allTimer.Start();
@@ -162,6 +169,7 @@ public partial class Warden : Node3D
         allTimer.Start();
 
         initialBid = true;
+        EmitSignal("PlayerWonBluff");
     }
 
     //WARDEN WON BLUFF:
@@ -174,6 +182,7 @@ public partial class Warden : Node3D
         allTimer.Start();
 
         initialBid = true;
+        EmitSignal("WardenWonBluff");
     }
 
     public void BeginRoundWarden(){

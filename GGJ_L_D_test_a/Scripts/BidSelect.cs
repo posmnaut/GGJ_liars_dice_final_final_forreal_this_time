@@ -3,9 +3,6 @@ using System;
 
 public partial class BidSelect : Node3D
 {
-	//call ButtAnim to trigger button animations plus value 0-5 for buttons (more info in Main.GD)
-	[Signal]
-	public delegate void ButtonAnimEventHandler(int button);
 	[Signal]
 	public delegate void FaceIncreaseInputHandlerEventHandler();
 	[Signal]
@@ -19,7 +16,6 @@ public partial class BidSelect : Node3D
 	[Signal]
 	public delegate void BluffInputHandlerEventHandler();
 
-
 	Random randNumGen = new Random();
 	AudioStreamPlayer3D SC1Audio;
 	AudioStreamPlayer3D SC2Audio;
@@ -27,8 +23,8 @@ public partial class BidSelect : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		SC1Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(8);
-		SC2Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(9);
+		SC1Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(5);
+		SC2Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(6);
 
 	}
 
@@ -84,7 +80,7 @@ public partial class BidSelect : Node3D
 		}
 	}
 
-	public void _on_SubmitArea_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
+	public void _on_submit_area_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
 		if(@event.IsActionPressed("mouse_click")){
 			if(randNumGen.Next(1,3) % 2 == 0){
 				SC1Audio.Play();
@@ -96,7 +92,7 @@ public partial class BidSelect : Node3D
 		}
 	}
 
-	public void _on_BluffArea_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
+	public void _on_bluff_area_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
 		if(@event.IsActionPressed("mouse_click")){
 			if(randNumGen.Next(1,3) % 2 == 0){
 				SC1Audio.Play();
@@ -107,5 +103,4 @@ public partial class BidSelect : Node3D
 			EmitSignal("BluffInputHandler");
 		}
 	}
-	
 }
