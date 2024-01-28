@@ -50,19 +50,19 @@ public partial class PlayerCamera : Camera3D
     {
         //Input.MouseMode = Input.MouseModeEnum.Captured;
         // cameraNode = GetTree().Root.GetChild(0).GetChild<Camera>(1);
-        
+
         //The position for the `PlayerCamera` `Camera` instance to `lookAt()` when `W` is ->
         //-> pressed.
         defaultTransform = this.Transform;
         //The position for the `PlayerCamera` `Camera` instance to `lookAt()` when `S` is ->
         //-> pressed.
-        lookAtDown = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<Node3D>(2);
+        lookAtDown = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild<Node3D>(2);
         //The position for the `PlayerCamera` `Camera` instance to `lookAt()` when `D` is ->
         //-> pressed.
-        lookAtRight = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<Node3D>(0);
+        lookAtRight = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild<Node3D>(0);
         //The position for the `PlayerCamera` `Camera` instance to `lookAt()` when `A` is ->
         //-> pressed.
-        lookAtLeft = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<Node3D>(1);
+        lookAtLeft = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild<Node3D>(1);
 
         //The "Warden"s `decideTimer`, this will be used to let us know when the player ->
         //-> can make actions again.
