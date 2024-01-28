@@ -80,7 +80,7 @@ public partial class BidSelect : Node3D
 		}
 	}
 
-	public void _on_SubmitArea_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
+	public void _on_submit_area_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
 		if(@event.IsActionPressed("mouse_click")){
 			if(randNumGen.Next(1,3) % 2 == 0){
 				SC1Audio.Play();
@@ -92,7 +92,7 @@ public partial class BidSelect : Node3D
 		}
 	}
 
-	public void _on_BluffArea_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
+	public void _on_bluff_area_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
 		if(@event.IsActionPressed("mouse_click")){
 			if(randNumGen.Next(1,3) % 2 == 0){
 				SC1Audio.Play();

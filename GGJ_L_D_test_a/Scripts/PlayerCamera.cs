@@ -34,6 +34,7 @@ public partial class PlayerCamera : Camera3D
     Node3D lookAtRight;
     Node3D lookAtLeft;
     Timer warderDecideTimer;
+    Dice diceClass;
 
     float interpolationDur = 0.0f;
     public bool isInterpolating = false;
@@ -67,6 +68,8 @@ public partial class PlayerCamera : Camera3D
         //The "Warden"s `decideTimer`, this will be used to let us know when the player ->
         //-> can make actions again.
         warderDecideTimer = GetTree().Root.GetChild(0).GetChild(2).GetChild<Timer>(3);
+
+        diceClass = GetTree().Root.GetChild(0).GetChild<Dice>(3);
     }
 
  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,6 +87,240 @@ public partial class PlayerCamera : Camera3D
         //     GD.Print(cameraNode.GlobalTransform.basis.z);
         // }
         // GD.Print(cameraNode.GlobalTransform.basis);
+        if(diceClass.roundNum == 1){
+            if(Input.IsActionJustPressed("start_round")){
+                GD.Print("I RAND");
+                turningDirect = 0;
+                // turnDownFlag = false;
+                // isInterpolating = false;
+                lockedInRound = true; 
+            }
+
+            if(lockedInRound == false){
+                if(isInterpolating == false){
+                    // if(Input.IsActionJustPressed("shake_cup")){
+                    //     if(turnDownFlag == false && turningDirect == 0){
+                    //         EmitSignal("CupShakenEventHandler");
+                    //         isInterpolating = true;
+                    //     }
+                    //     else{
+                    //         GD.Print("I have to make eye-contact to shake my cup");
+                    //         EmitSignal("NoEyeContactEventHandler");
+                    //     }
+                    // }
+                    if(Input.IsActionJustPressed("move_backward")){
+                        if(turnDownFlag == false){
+                            turnDownFlag = true;
+                            interpolationDur = 0.0f;
+                            isInterpolating = true;
+                        }
+                    }
+                    else if(Input.IsActionJustPressed("move_right") && turningDirect != 1 || Input.IsActionJustPressed("move_right") && turnDownFlag == true){
+                        if(turnDownFlag == false){
+                            turningDirect += 1;
+                        }
+                        else{
+                            EmitSignal("CupDown");
+                            turningDirect = 1;
+                        }
+
+                        interpolationDur = 0.0f;
+                        isInterpolating = true;
+                        turnDownFlag = false;
+                    }
+                    else if(Input.IsActionJustPressed("move_left") && turningDirect != -1 || Input.IsActionJustPressed("move_left") && turnDownFlag == true){
+                        if(turnDownFlag == false){
+                            turningDirect -= 1;
+                        }
+                        else{
+                            EmitSignal("CupDown");
+                            turningDirect = -1;
+                        }
+                        
+                        interpolationDur = 0.0f;
+                        isInterpolating = true;
+                        turnDownFlag = false;
+                    }
+                    else if(Input.IsActionJustPressed("move_forward")){
+                        if(turnDownFlag == true){
+                            EmitSignal("CupDown");
+                        }
+
+                        interpolationDur = 0.0f;
+                        turnDownFlag = false;
+                        turningDirect = 0;
+                    }
+                }
+                // GD.Print(turningDirect);
+                // GD.Print(turnDownFlag);
+                if(isCupShaking == false){
+                    //Look-Backward:
+                    if(turnDownFlag == true){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        this.LookAt(lookAtDown.Position, Vector3.Up);
+                        Transform3D endLocation = this.Transform;
+
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                        //This `if-statement` prevents the `Signal` from being emitted too early and ->
+                        //-> And prevents it from firing more than once.
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            EmitSignal("CupLift");
+                            isInterpolating = false;
+                        }
+                    }
+                    //Look-Forward:
+                    else if(turningDirect == 0){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        Transform3D endLocation = defaultTransform;
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            isInterpolating = false;
+                        }
+                    }
+                    //Look-Right:
+                    else if(turningDirect == 1){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        this.LookAt(lookAtRight.Position, Vector3.Up);
+                        Transform3D endLocation = this.Transform;
+
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            isInterpolating = false;
+                        }
+                    }
+                    //Look-Left:
+                    else if(turningDirect == -1){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        this.LookAt(lookAtLeft.Position, Vector3.Up);
+                        Transform3D endLocation = this.Transform;
+
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            isInterpolating = false;
+                        }
+                    }
+                
+                // if(this.Transform == lookAtRight.Transform){
+                //     turningRight = false;
+                // }
+                }
+            }
+            else{
+                if(isInterpolating == false){
+                    if(Input.IsActionJustPressed("shake_cup") && bidRound == false){
+                        if(turnDownFlag == false && turningDirect == 0){
+                            EmitSignal("CupShaken");
+                            isInterpolating = true;
+                            bidRound = true;
+                        }
+                        else{
+                            GD.Print("I have to make eye-contact to shake my cup");
+                            EmitSignal("NoEyeContact");
+                        }
+                    }
+                    else if(Input.IsActionJustPressed("move_backward")){
+                        if(turnDownFlag == false){
+                            turnDownFlag = true;
+                            interpolationDur = 0.0f;
+                            isInterpolating = true;
+                        }
+                    }
+                    else if(Input.IsActionJustPressed("move_right") && turningDirect != 1 || Input.IsActionJustPressed("move_right") && turnDownFlag == true){
+                        if(turnDownFlag == false){
+                            turningDirect += 1;
+                        }
+                        else{
+                            EmitSignal("CupDown");
+                            turningDirect = 1;
+                        }
+
+                        interpolationDur = 0.0f;
+                        isInterpolating = true;
+                        turnDownFlag = false;
+                    }
+                    else if(Input.IsActionJustPressed("move_left") && turningDirect != -1 || Input.IsActionJustPressed("move_left") && turnDownFlag == true){
+                        if(turnDownFlag == false){
+                            turningDirect -= 1;
+                        }
+                        else{
+                            EmitSignal("CupDown");
+                            turningDirect = -1;
+                        }
+                        
+                        interpolationDur = 0.0f;
+                        isInterpolating = true;
+                        turnDownFlag = false;
+                    }
+                    else if(Input.IsActionJustPressed("move_forward")){
+                        if(turnDownFlag == true){
+                            EmitSignal("CupDown");
+                        }
+
+                        interpolationDur = 0.0f;
+                        turnDownFlag = false;
+                        turningDirect = 0;
+                    }
+                }
+                if(isCupShaking == false){
+                    //Look-Backward:
+                    if(turnDownFlag == true){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        this.LookAt(lookAtDown.Position, Vector3.Up);
+                        Transform3D endLocation = this.Transform;
+
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                        //This `if-statement` prevents the `Signal` from being emitted too early and ->
+                        //-> And prevents it from firing more than once.
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            EmitSignal("CupLift");
+                            isInterpolating = false;
+                        }
+                    }
+                    //Look-Forward:
+                    else if(turningDirect == 0){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        Transform3D endLocation = defaultTransform;
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            isInterpolating = false;
+                        }
+                    }
+                    //Look-Right:
+                    else if(turningDirect == 1){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        this.LookAt(lookAtRight.Position, Vector3.Up);
+                        Transform3D endLocation = this.Transform;
+
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            isInterpolating = false;
+                        }
+                    }
+                    //Look-Left:
+                    else if(turningDirect == -1){
+                        interpolationDur += 0.2f + (float) delta;
+                        Transform3D startLocation = this.Transform;
+                        this.LookAt(lookAtLeft.Position, Vector3.Up);
+                        Transform3D endLocation = this.Transform;
+
+                        this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                        if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                            isInterpolating = false;
+                        }
+                    }
+                }
+            }
+        }
+    else if(diceClass.roundNum == 2){
         if(Input.IsActionJustPressed("start_round")){
             GD.Print("I RAND");
             turningDirect = 0;
@@ -316,6 +553,240 @@ public partial class PlayerCamera : Camera3D
             }
         }
     }
+    else if(diceClass.roundNum == 3){
+        if(Input.IsActionJustPressed("start_round")){
+            GD.Print("I RAND");
+            turningDirect = 0;
+            // turnDownFlag = false;
+            // isInterpolating = false;
+            lockedInRound = true; 
+        }
+
+        if(lockedInRound == false){
+            if(isInterpolating == false){
+                // if(Input.IsActionJustPressed("shake_cup")){
+                //     if(turnDownFlag == false && turningDirect == 0){
+                //         EmitSignal("CupShakenEventHandler");
+                //         isInterpolating = true;
+                //     }
+                //     else{
+                //         GD.Print("I have to make eye-contact to shake my cup");
+                //         EmitSignal("NoEyeContactEventHandler");
+                //     }
+                // }
+                if(Input.IsActionJustPressed("move_backward")){
+                    if(turnDownFlag == false){
+                        turnDownFlag = true;
+                        interpolationDur = 0.0f;
+                        isInterpolating = true;
+                    }
+                }
+                else if(Input.IsActionJustPressed("move_right") && turningDirect != 1 || Input.IsActionJustPressed("move_right") && turnDownFlag == true){
+                    if(turnDownFlag == false){
+                        turningDirect += 1;
+                    }
+                    else{
+                        EmitSignal("CupDown");
+                        turningDirect = 1;
+                    }
+
+                    interpolationDur = 0.0f;
+                    isInterpolating = true;
+                    turnDownFlag = false;
+                }
+                else if(Input.IsActionJustPressed("move_left") && turningDirect != -1 || Input.IsActionJustPressed("move_left") && turnDownFlag == true){
+                    if(turnDownFlag == false){
+                        turningDirect -= 1;
+                    }
+                    else{
+                        EmitSignal("CupDown");
+                        turningDirect = -1;
+                    }
+                    
+                    interpolationDur = 0.0f;
+                    isInterpolating = true;
+                    turnDownFlag = false;
+                }
+                else if(Input.IsActionJustPressed("move_forward")){
+                    if(turnDownFlag == true){
+                        EmitSignal("CupDown");
+                    }
+
+                    interpolationDur = 0.0f;
+                    turnDownFlag = false;
+                    turningDirect = 0;
+                }
+            }
+            // GD.Print(turningDirect);
+            // GD.Print(turnDownFlag);
+            if(isCupShaking == false){
+                //Look-Backward:
+                if(turnDownFlag == true){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    this.LookAt(lookAtDown.Position, Vector3.Up);
+                    Transform3D endLocation = this.Transform;
+
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                    //This `if-statement` prevents the `Signal` from being emitted too early and ->
+                    //-> And prevents it from firing more than once.
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        EmitSignal("CupLift");
+                        isInterpolating = false;
+                    }
+                }
+                //Look-Forward:
+                else if(turningDirect == 0){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    Transform3D endLocation = defaultTransform;
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        isInterpolating = false;
+                    }
+                }
+                //Look-Right:
+                else if(turningDirect == 1){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    this.LookAt(lookAtRight.Position, Vector3.Up);
+                    Transform3D endLocation = this.Transform;
+
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        isInterpolating = false;
+                    }
+                }
+                //Look-Left:
+                else if(turningDirect == -1){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    this.LookAt(lookAtLeft.Position, Vector3.Up);
+                    Transform3D endLocation = this.Transform;
+
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        isInterpolating = false;
+                    }
+                }
+            
+            // if(this.Transform == lookAtRight.Transform){
+            //     turningRight = false;
+            // }
+            }
+        }
+        else{
+            if(isInterpolating == false){
+                if(Input.IsActionJustPressed("shake_cup") && bidRound == false){
+                    if(turnDownFlag == false && turningDirect == 0){
+                        EmitSignal("CupShaken");
+                        isInterpolating = true;
+                        bidRound = true;
+                    }
+                    else{
+                        GD.Print("I have to make eye-contact to shake my cup");
+                        EmitSignal("NoEyeContact");
+                    }
+                }
+                else if(Input.IsActionJustPressed("move_backward")){
+                    if(turnDownFlag == false){
+                        turnDownFlag = true;
+                        interpolationDur = 0.0f;
+                        isInterpolating = true;
+                    }
+                }
+                else if(Input.IsActionJustPressed("move_right") && turningDirect != 1 || Input.IsActionJustPressed("move_right") && turnDownFlag == true){
+                    if(turnDownFlag == false){
+                        turningDirect += 1;
+                    }
+                    else{
+                        EmitSignal("CupDown");
+                        turningDirect = 1;
+                    }
+
+                    interpolationDur = 0.0f;
+                    isInterpolating = true;
+                    turnDownFlag = false;
+                }
+                else if(Input.IsActionJustPressed("move_left") && turningDirect != -1 || Input.IsActionJustPressed("move_left") && turnDownFlag == true){
+                    if(turnDownFlag == false){
+                        turningDirect -= 1;
+                    }
+                    else{
+                        EmitSignal("CupDown");
+                        turningDirect = -1;
+                    }
+                    
+                    interpolationDur = 0.0f;
+                    isInterpolating = true;
+                    turnDownFlag = false;
+                }
+                else if(Input.IsActionJustPressed("move_forward")){
+                    if(turnDownFlag == true){
+                        EmitSignal("CupDown");
+                    }
+
+                    interpolationDur = 0.0f;
+                    turnDownFlag = false;
+                    turningDirect = 0;
+                }
+            }
+            if(isCupShaking == false){
+                //Look-Backward:
+                if(turnDownFlag == true){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    this.LookAt(lookAtDown.Position, Vector3.Up);
+                    Transform3D endLocation = this.Transform;
+
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                    //This `if-statement` prevents the `Signal` from being emitted too early and ->
+                    //-> And prevents it from firing more than once.
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        EmitSignal("CupLift");
+                        isInterpolating = false;
+                    }
+                }
+                //Look-Forward:
+                else if(turningDirect == 0){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    Transform3D endLocation = defaultTransform;
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        isInterpolating = false;
+                    }
+                }
+                //Look-Right:
+                else if(turningDirect == 1){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    this.LookAt(lookAtRight.Position, Vector3.Up);
+                    Transform3D endLocation = this.Transform;
+
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        isInterpolating = false;
+                    }
+                }
+                //Look-Left:
+                else if(turningDirect == -1){
+                    interpolationDur += 0.2f + (float) delta;
+                    Transform3D startLocation = this.Transform;
+                    this.LookAt(lookAtLeft.Position, Vector3.Up);
+                    Transform3D endLocation = this.Transform;
+
+                    this.Transform = startLocation.InterpolateWith(endLocation, 0.2f + (float) delta);
+                    if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
+                        isInterpolating = false;
+                    }
+                }
+            }
+        }
+    }
+    }
 }
 
     public override void _Input(InputEvent @event)
@@ -340,6 +811,7 @@ public partial class PlayerCamera : Camera3D
     // }
 
     public void _on_warden_w_bid_made(int highestFreq, int highestFace){
+        // GD.Print("DEBUGGER: WARDEN BID MADE");
         previousHighestFreq = highestFreq;
         playfreqBid = highestFreq;
 
@@ -405,6 +877,10 @@ public partial class PlayerCamera : Camera3D
             GD.Print("BLUFF");
             EmitSignal("BluffInputHandler", previousHighestFreq, previousHighestFace);
         }
+        // previousHighestFace = 0;
+        // previousHighestFreq = 0;
+        // playfreqBid = 1;
+        // playfaceBid = 1;
     }
 
     //PLAYER WON BLUFF:
@@ -422,7 +898,40 @@ public partial class PlayerCamera : Camera3D
 
     //WARDEN WON BLUFF:
     public void _on_dice_warden_won_bluff(){
+        // previousHighestFace = 0;
+        // previousHighestFreq = 0;
+        // playfreqBid = 1;
+        // playfaceBid = 1;
+
         //ADD: Revoke player priority next turn.
         bidRound = false;
+    }
+
+    public void _on_dice_round_two_start(bool playerWonRound){
+        if(playerWonRound == true){
+            GD.Print("[1: Player Won Round]");
+        }
+        else{
+            GD.Print("[1: Player Lost Round]");
+        }
+        bidRound = false;
+    }
+
+    public void _on_dice_round_three_start(bool playerWonRound){
+        if(playerWonRound == true){
+            GD.Print("[2: Player Won Round]");
+        }
+        else{
+            GD.Print("[2: Player Lost Round]");
+        }
+        bidRound = false;
+    }
+
+    public void _on_dice_game_end_player_win(){
+
+    }
+
+    public void _on_dice_game_end_player_loss(){
+
     }
 }

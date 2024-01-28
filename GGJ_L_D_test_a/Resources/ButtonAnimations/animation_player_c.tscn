@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://djoxkd4yxx3h1"]
+
+[sub_resource type="Animation" id="Animation_uxn8b"]
+resource_name = "butt_anim"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("down1-b")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.187391, -0.0575595, -0.22343, 0.1, 1, -0.187, -0.068, -0.223, 0.2, 1, -0.187391, -0.0575595, -0.22343)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_moe2p"]
+_data = {
+"butt_anim": SubResource("Animation_uxn8b")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_moe2p")
+}

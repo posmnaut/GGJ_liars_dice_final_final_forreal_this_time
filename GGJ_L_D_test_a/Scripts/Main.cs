@@ -9,6 +9,13 @@ using System;
 //FUTURE: Make a return statement that is a boolean and will stop this signal ->
 //-> from firing if the "Warden" calls a bluff.
 
+//1.) Rounds restart.
+//2.) Fuzzy dice.
+//3.) Finger mechanic.
+//4.) Audio (theme and dice sounds).
+//5.) Dice under the cup.
+//6.) Etch wood with numbers and words.
+
 
 public partial class Main : Node
 {
@@ -65,5 +72,13 @@ public partial class Main : Node
 		warden.Visible = true;
 		diceSpatial.Visible = true;
 		bidSelect.Visible = true;
+	}
+
+	public void _on_dice_game_end_player_win(){
+
+	}
+
+	public void _on_dice_game_end_player_loss(){
+
 	}
 }

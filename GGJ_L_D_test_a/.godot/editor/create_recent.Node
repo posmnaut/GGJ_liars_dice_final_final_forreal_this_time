@@ -1,4 +1,10 @@
+AnimationPlayer
 Node3D
+AnimationTree
+Sprite3D
+TextureRect
+Decal
+DirectionalLight3D
 SubViewport
 Container
 Control
@@ -6,7 +12,3 @@ Camera3D
 CanvasLayer
 SubViewportContainer
 ShaderGlobalsOverride
-MeshInstance3D
-Node
-ImporterMeshInstance3D
-DirectionalLight3D

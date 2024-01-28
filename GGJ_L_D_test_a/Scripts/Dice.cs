@@ -7,10 +7,21 @@ public partial class Dice : Node3D
     public delegate void PlayerWonBluffEventHandler();
     [Signal]
     public delegate void WardenWonBluffEventHandler();
+    [Signal]
+    public delegate void RoundTwoStartEventHandler(bool playerWonRound);
+    [Signal]
+    public delegate void RoundThreeStartEventHandler(bool playerWonRound);
+    [Signal]
+    public delegate void GameEndPlayerLossEventHandler();
+    [Signal]
+    public delegate void GameEndPlayerWinEventHandler();
 
     private Random ranNumGen = new Random();
     public bool shakenOnce = false;
     int[] playerDiceArray = new int[5];
+    public int roundNum = 1;
+    bool playerWonRound;
+    public int playerLifeCount = 3;
     Label3D dieLab1;
     Label3D dieLab2;
     Label3D dieLab3;
@@ -131,7 +142,28 @@ public partial class Dice : Node3D
         if(totalFreqArray[wardenFace-1] < wardenFreq){
             GD.Print("PLAYER WON THE BLUFF");
             warden.playerFirst = true;
-            EmitSignal("PlayerWonBluff");
+
+            if(warden.dieArray.Length > 1){
+                EmitSignal("PlayerWonBluff");
+            }
+            else if(warden.dieArray.Length <= 1 && roundNum == 1){
+                roundNum = 2;
+                playerWonRound = true;
+                playerDiceArray = new int[5];
+
+                EmitSignal("RoundTwoStart", playerWonRound);
+            }
+            else if(warden.dieArray.Length <= 1 && roundNum == 2){
+                roundNum = 3;
+                playerWonRound = true;
+                playerDiceArray = new int[5];
+                
+                EmitSignal("RoundThreeStart", playerWonRound);
+            }
+            else if(warden.dieArray.Length <= 1 && roundNum == 3){
+                //Emit "GameEnd" Signal.
+                EmitSignal("GameEndPlayerWin");
+            }
         }
         else{
             GD.Print("WARDEN WON THE BLUFF");
@@ -140,7 +172,35 @@ public partial class Dice : Node3D
             //-> than previous `Length`.
             GD.Print("PLAYER DICE AMOUT: " + playerDiceArray.Length);
             warden.playerFirst = false;
-            EmitSignal("WardenWonBluff");
+
+            if(playerDiceArray.Length > 1){
+                EmitSignal("WardenWonBluff");
+            }
+            else if(playerDiceArray.Length <= 1 && roundNum == 1){
+                roundNum = 2;
+                playerWonRound = false;
+                playerDiceArray = new int[5];
+
+                EmitSignal("RoundTwoStart", playerWonRound);
+            }
+            else if(playerDiceArray.Length <= 1 && roundNum == 2){
+                roundNum = 3;
+                playerWonRound = false;
+                playerDiceArray = new int[5];
+
+                EmitSignal("RoundThreeStart", playerWonRound);
+            }
+            else if(roundNum == 3 && playerLifeCount == 1){
+                //ADD: Player trips balls to death.
+
+                //Emit "GameEnd" Signal.
+                EmitSignal("GameEndPlayerLoss");
+            }
+            else if(roundNum == 3 && playerLifeCount > 1){
+                //ADD: Player trips balls Signal.
+
+                EmitSignal("WardenWonBluff");
+            }
         }
     }
     
@@ -166,12 +226,61 @@ public partial class Dice : Node3D
             //-> than previous `Length`.
             GD.Print("PLAYER DICE AMOUT: " + playerDiceArray.Length);
             warden.playerFirst = false;
-            EmitSignal("WardenWonBluff");
+            
+            if(playerDiceArray.Length > 1){
+                EmitSignal("WardenWonBluff");
+            }
+            else if(playerDiceArray.Length <= 1 && roundNum == 1){
+                roundNum = 2;
+                playerWonRound = false;
+                playerDiceArray = new int[5];
+
+                EmitSignal("RoundTwoStart", playerWonRound);
+            }
+            else if(playerDiceArray.Length <= 1 && roundNum == 2){
+                roundNum = 3;
+                playerWonRound = false;
+                playerDiceArray = new int[5];
+
+                EmitSignal("RoundThreeStart", playerWonRound);
+            }
+            else if(roundNum == 3 && playerLifeCount == 1){
+                //ADD: Player trips balls to death.
+
+                //Emit "GameEnd" Signal.
+                EmitSignal("GameEndPlayerLoss");
+            }
+            else if(roundNum == 3 && playerLifeCount > 1){
+                //ADD: Player trips balls Signal.
+
+                EmitSignal("WardenWonBluff");
+            }
         }
         else{
             GD.Print("PLAYER WON THE BLUFF");
             warden.playerFirst = true;
-            EmitSignal("PlayerWonBluff");
+            
+            if(warden.dieArray.Length > 1){
+                EmitSignal("PlayerWonBluff");
+            }
+            else if(warden.dieArray.Length <= 1 && roundNum == 1){
+                roundNum = 2;
+                playerWonRound = true;
+                playerDiceArray = new int[5];
+
+                EmitSignal("RoundTwoStart", playerWonRound);
+            }
+            else if(warden.dieArray.Length <= 1 && roundNum == 2){
+                roundNum = 3;
+                playerWonRound = true;
+                playerDiceArray = new int[5];
+
+                EmitSignal("RoundThreeStart", playerWonRound);
+            }
+            else if(warden.dieArray.Length <= 1 && roundNum == 3){
+                //Emit "GameEnd" Signal.
+                EmitSignal("GameEndPlayerWin");
+            }
         }
     }
 }
