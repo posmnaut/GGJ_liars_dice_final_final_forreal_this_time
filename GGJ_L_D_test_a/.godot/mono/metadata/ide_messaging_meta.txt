@@ -1,0 +1,2 @@
+﻿51376
+D:/Godot_mono_install/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64.exe
