@@ -85,6 +85,7 @@ public partial class PlayerCamera : Camera3D
         // }
         // GD.Print(cameraNode.GlobalTransform.basis);
         if(Input.IsActionJustPressed("start_round")){
+            GD.Print("I RAND");
             turningDirect = 0;
             // turnDownFlag = false;
             // isInterpolating = false;
@@ -115,7 +116,7 @@ public partial class PlayerCamera : Camera3D
                         turningDirect += 1;
                     }
                     else{
-                        EmitSignal("CupDownEventHandler");
+                        EmitSignal("CupDown");
                         turningDirect = 1;
                     }
 
@@ -128,7 +129,7 @@ public partial class PlayerCamera : Camera3D
                         turningDirect -= 1;
                     }
                     else{
-                        EmitSignal("CupDownEventHandler");
+                        EmitSignal("CupDown");
                         turningDirect = -1;
                     }
                     
@@ -138,7 +139,7 @@ public partial class PlayerCamera : Camera3D
                 }
                 else if(Input.IsActionJustPressed("move_forward")){
                     if(turnDownFlag == true){
-                        EmitSignal("CupDownEventHandler");
+                        EmitSignal("CupDown");
                     }
 
                     interpolationDur = 0.0f;
@@ -160,7 +161,7 @@ public partial class PlayerCamera : Camera3D
                     //This `if-statement` prevents the `Signal` from being emitted too early and ->
                     //-> And prevents it from firing more than once.
                     if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
-                        EmitSignal("CupLiftEventHandler");
+                        EmitSignal("CupLift");
                         isInterpolating = false;
                     }
                 }
@@ -209,13 +210,13 @@ public partial class PlayerCamera : Camera3D
             if(isInterpolating == false){
                 if(Input.IsActionJustPressed("shake_cup") && bidRound == false){
                     if(turnDownFlag == false && turningDirect == 0){
-                        EmitSignal("CupShakenEventHandler");
+                        EmitSignal("CupShaken");
                         isInterpolating = true;
                         bidRound = true;
                     }
                     else{
                         GD.Print("I have to make eye-contact to shake my cup");
-                        EmitSignal("NoEyeContactEventHandler");
+                        EmitSignal("NoEyeContact");
                     }
                 }
                 else if(Input.IsActionJustPressed("move_backward")){
@@ -230,7 +231,7 @@ public partial class PlayerCamera : Camera3D
                         turningDirect += 1;
                     }
                     else{
-                        EmitSignal("CupDownEventHandler");
+                        EmitSignal("CupDown");
                         turningDirect = 1;
                     }
 
@@ -243,7 +244,7 @@ public partial class PlayerCamera : Camera3D
                         turningDirect -= 1;
                     }
                     else{
-                        EmitSignal("CupDownEventHandler");
+                        EmitSignal("CupDown");
                         turningDirect = -1;
                     }
                     
@@ -253,7 +254,7 @@ public partial class PlayerCamera : Camera3D
                 }
                 else if(Input.IsActionJustPressed("move_forward")){
                     if(turnDownFlag == true){
-                        EmitSignal("CupDownEventHandler");
+                        EmitSignal("CupDown");
                     }
 
                     interpolationDur = 0.0f;
@@ -273,7 +274,7 @@ public partial class PlayerCamera : Camera3D
                     //This `if-statement` prevents the `Signal` from being emitted too early and ->
                     //-> And prevents it from firing more than once.
                     if(interpolationDur >= 1.0f && interpolationDur <= 1.084){
-                        EmitSignal("CupLiftEventHandler");
+                        EmitSignal("CupLift");
                         isInterpolating = false;
                     }
                 }
@@ -338,7 +339,7 @@ public partial class PlayerCamera : Camera3D
     //     // gameStart = false;
     // }
 
-    public void _on_Warden_WBidMadeEventHandler(int highestFreq, int highestFace){
+    public void _on_warden_w_bid_made(int highestFreq, int highestFace){
         previousHighestFreq = highestFreq;
         playfreqBid = highestFreq;
 
@@ -347,35 +348,35 @@ public partial class PlayerCamera : Camera3D
     }
 
     //FACE INCREASE:
-    public void _on_BidSelect_FaceIncreaseInputHandler(){
+    public void _on_bid_select_face_increase_input_handler(){
         if(playfaceBid < 6 && bidRound == true){
             playfaceBid += 1;
         }
     }
 
     //FACE DECREASE:
-    public void _on_BidSelect_FaceDecreaseInputHandler(){
+    public void _on_bid_select_face_decrease_input_handler(){
         if(playfaceBid > 1 && bidRound == true){
             playfaceBid -= 1;
         }
     }
 
     //FREQ. INCREASE:
-    public void _on_BidSelect_FreqIncreaseInputHandler(){
+    public void _on_bid_select_freq_increase_input_handler(){
         if(bidRound == true){
             playfreqBid += 1;
         }
     }
 
     //FREQ. DECREASE:
-    public void _on_BidSelect_FreqDecreaseInputHandler(){
+    public void _on_bid_select_freq_decrease_input_handler(){
         if(playfreqBid > previousHighestFreq && bidRound == true){//LESS THAN PREV FREQ.
             playfreqBid -= 1;
         }
     }
 
     //SUBMIT BID:
-    public void _on_BidSelect_SubmitInputHandler(){
+    public void _on_bid_select_submit_input_handler(){
         if(playfaceBid == 0 && playfreqBid == 0){
             GD.Print("CANNOT SUBMIT THIS SCORE: [ERROR] REASON: [FREQUENCY AND FACE OF BID ARE STILL INITIAL VALUES OF [0] and [0]]");
         }
@@ -399,7 +400,7 @@ public partial class PlayerCamera : Camera3D
     }
 
     //BLUFF BID:
-    public void _on_BidSelect_BluffInputHandler(){
+    public void _on_bid_select_bluff_input_handler(){
         if(bidRound == true){
             GD.Print("BLUFF");
             EmitSignal("BluffInputHandler", previousHighestFreq, previousHighestFace);
@@ -407,7 +408,7 @@ public partial class PlayerCamera : Camera3D
     }
 
     //PLAYER WON BLUFF:
-    public void _on_Dice_PlayerWonBluffEventHandler(){
+    public void _on_dice_player_won_bluff(){
         //ADD: Player gains turn priority next turn.
         //BELOW FOUR LINES: These are a must for allowing the player's bid frequency and ->
         //-> face to return to `0`.
@@ -420,7 +421,7 @@ public partial class PlayerCamera : Camera3D
     }
 
     //WARDEN WON BLUFF:
-    public void _on_Dice_WardenWonBluffEventHandler(){
+    public void _on_dice_warden_won_bluff(){
         //ADD: Revoke player priority next turn.
         bidRound = false;
     }

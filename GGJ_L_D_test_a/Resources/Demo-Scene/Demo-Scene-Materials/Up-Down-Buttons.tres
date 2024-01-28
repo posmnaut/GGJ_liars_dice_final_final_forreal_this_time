@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2nq3e7kg2uv1"]
+
+[ext_resource type="Texture2D" uid="uid://f63v7cil0yi1" path="res://Resources/Demo-Scene_UpDown-Button-diffuse.png" id="1_4to48"]
+
+[resource]
+resource_name = "Up-Down-Buttons"
+cull_mode = 2
+albedo_texture = ExtResource("1_4to48")
+roughness = 0.5

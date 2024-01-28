@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Godot_mono_install\\GGJ_L_D_test_a\\LiarsDie.csproj": {}
+    "E:\\LiarsDie4.0\\LiarsDie.csproj": {}
   },
   "projects": {
-    "D:\\Godot_mono_install\\GGJ_L_D_test_a\\LiarsDie.csproj": {
+    "E:\\LiarsDie4.0\\LiarsDie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Godot_mono_install\\GGJ_L_D_test_a\\LiarsDie.csproj",
+        "projectUniqueName": "E:\\LiarsDie4.0\\LiarsDie.csproj",
         "projectName": "LiarsDie",
-        "projectPath": "D:\\Godot_mono_install\\GGJ_L_D_test_a\\LiarsDie.csproj",
-        "packagesPath": "C:\\Users\\desig\\.nuget\\packages\\",
-        "outputPath": "D:\\Godot_mono_install\\GGJ_L_D_test_a\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "E:\\LiarsDie4.0\\LiarsDie.csproj",
+        "packagesPath": "C:\\Users\\alexm\\.nuget\\packages\\",
+        "outputPath": "E:\\LiarsDie4.0\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\desig\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\alexm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -55,6 +51,10 @@
             "GodotSharpEditor": {
               "target": "Package",
               "version": "[4.2.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
             }
           },
           "imports": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.418\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,89 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b5htxv72irpip"
+path="res://.godot/imported/Demo-Scene.glb-18f0c958f48e8c22573f91094ff9ac6c.scn"
+
+[deps]
+
+source_file="res://Resources/Demo-Scene/Demo-Scene.glb"
+dest_files=["res://.godot/imported/Demo-Scene.glb-18f0c958f48e8c22573f91094ff9ac6c.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Demo-Scene-Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Material.tres"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Material.007.tres"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Material.008.tres"
+},
+"Screen": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Screen.tres"
+},
+"TV1": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/TV1.tres"
+},
+"TV2": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/TV2.tres"
+},
+"TV3": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/TV3.tres"
+},
+"Up-Down-Buttons": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Up-Down-Buttons.tres"
+},
+"Up-Down-Buttons.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Up-Down-Buttons.001.tres"
+},
+"Up-Down-Buttons.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Up-Down-Buttons.002.tres"
+},
+"Up-Down-Buttons.003": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Up-Down-Buttons.003.tres"
+},
+"Walls": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/Walls.tres"
+},
+"WindowMan": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Demo-Scene-Materials/WindowMan.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

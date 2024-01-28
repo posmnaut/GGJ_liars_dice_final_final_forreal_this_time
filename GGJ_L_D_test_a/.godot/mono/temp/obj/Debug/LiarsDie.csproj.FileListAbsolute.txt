@@ -22,3 +22,15 @@ D:\Godot_mono_install\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.dll
 D:\Godot_mono_install\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\refint\LiarsDie.dll
 D:\Godot_mono_install\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.pdb
 D:\Godot_mono_install\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\ref\LiarsDie.dll
+E:\LiarsDie4.0\.godot\mono\temp\bin\Debug\LiarsDie.deps.json
+E:\LiarsDie4.0\.godot\mono\temp\bin\Debug\LiarsDie.dll
+E:\LiarsDie4.0\.godot\mono\temp\bin\Debug\LiarsDie.pdb
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.csproj.AssemblyReference.cache
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.GeneratedMSBuildEditorConfig.editorconfig
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.AssemblyInfoInputs.cache
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.AssemblyInfo.cs
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.csproj.CoreCompileInputs.cache
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.dll
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\refint\LiarsDie.dll
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.pdb
+E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\ref\LiarsDie.dll

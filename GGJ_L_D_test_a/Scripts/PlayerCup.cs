@@ -118,7 +118,7 @@ public partial class PlayerCup : StaticBody3D
 		// }
 	}
 
-	public void _on_PlayerCamera_CupLiftEventHandler(){
+	public void _on_player_camera_cup_lift(){
 		if(diceSpatial.shakenOnce == true){
 			int numAud = randNumGen.Next(1,3);
 			if(numAud % 2 == 0){
@@ -131,7 +131,7 @@ public partial class PlayerCup : StaticBody3D
 		this.RotateX(-1.0f);
 	}
 
-	public void _on_PlayerCamera_CupDownEventHandler(){
+	public void _on_player_camera_cup_down(){
 		// if(playerCam.turnDownFlag == false){
 		// GD.Print("Lowered");
 
@@ -139,7 +139,7 @@ public partial class PlayerCup : StaticBody3D
 		// }
 	}
 
-	public void _on_PlayerCamera_CupShakenEventHandler(){
+	public void _on_player_camera_cup_shaken(){
 		cupOrigTrans = this.Transform;
 		shakeTimer.Start();
 		freedInterp = true;

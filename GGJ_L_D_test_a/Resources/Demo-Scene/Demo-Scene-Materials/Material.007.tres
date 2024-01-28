@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://w6t2267abg5a"]
+
+[ext_resource type="Texture2D" uid="uid://b1cwfvhxnnd2t" path="res://Resources/Demo-Scene_Buttons-diffuse.png" id="1_sbhai"]
+
+[resource]
+resource_name = "Material.007"
+cull_mode = 2
+albedo_texture = ExtResource("1_sbhai")
+roughness = 0.5

@@ -34,6 +34,7 @@
             "WARNING17": "Configuration...' button at the bottom of this file.",
             "WARNING18": "*********************************************************************************",
             "preLaunchTask": "build",
+            // "program": "${workspaceFolder}/bin/Debug/<insert-target-framework-here>/<insert-project-name-here>.dll",
             "program": "${workspaceFolder}/bin/Debug/<insert-target-framework-here>/<insert-project-name-here>.dll",
             "args": [],
             "cwd": "${workspaceFolder}",

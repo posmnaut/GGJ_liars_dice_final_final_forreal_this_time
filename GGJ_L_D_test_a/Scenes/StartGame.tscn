@@ -206,16 +206,18 @@ mesh = SubResource("10")
 skeleton = NodePath("")
 
 [node name="LegalNameLabel" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, -0.0523361, 0.998627, 0, -0.998627, -0.0523361, 0.000256243, 0.00335002, 0.453165)
+transform = Transform3D(1, 0, 0, 0, -0.0523361, 0.998627, 0, -0.998627, -0.0523361, 0.0691844, 0.00335002, 0.453165)
 pixel_size = 0.007
 modulate = Color(0, 0, 0, 1)
 text = "TEMPORARY"
+font_size = 17
 uppercase = true
 
 [node name="ActualPrintLabel" type="Label3D" parent="Background/StartScreen"]
 transform = Transform3D(1, 0, 0, 0, -0.018116, 0.999833, 0, -0.999833, -0.018116, -0.729572, 0.0110409, -0.266713)
 pixel_size = 0.001
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit eget gravida cum sociis natoque penatibus et magnis dis. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Pharetra et ultrices neque ornare aenean. Quam nulla porttitor massa id. Mauris cursus mattis molestie a iaculis at erat. Massa placerat duis ultricies lacus sed turpis. Pharetra vel turpis nunc eget lorem dolor sed. Mattis aliquam faucibus purus in massa tempor nec feugiat. Amet dictum sit amet justo donec enim.
 
 Elementum pulvinar etiam non quam lacus. Blandit cursus risus at ultrices mi tempus imperdiet. Pharetra vel turpis nunc eget lorem dolor sed viverra. Dolor sit amet consectetur adipiscing. Convallis posuere morbi leo urna molestie at. Imperdiet sed euismod nisi porta lorem mollis. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Purus ut faucibus pulvinar elementum integer enim neque. Praesent tristique magna sit amet purus gravida quis. Ut porttitor leo a diam sollicitudin. Eget magna fermentum iaculis eu non diam. Vitae congue eu consequat ac felis donec et odio pellentesque. Facilisis leo vel fringilla est ullamcorper eget nulla. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Tincidunt lobortis feugiat vivamus at. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Pharetra sit amet aliquam id diam maecenas. Tincidunt id aliquet risus feugiat in ante. Quis blandit turpis cursus in hac habitasse.
@@ -237,7 +239,10 @@ Id velit ut tortor pretium viverra suspendisse potenti nullam ac. At varius vel 
 Morbi enim nunc faucibus a pellentesque sit. Vitae congue eu consequat ac felis donec et odio pellentesque. Dignissim cras tincidunt lobortis feugiat. Ante metus dictum at tempor commodo ullamcorper a lacus vestibulum. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Consectetur purus ut faucibus pulvinar elementum. Sagittis eu volutpat odio facilisis mauris sit amet. In est ante in nibh. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Orci a scelerisque purus semper. Placerat vestibulum lectus mauris ultrices eros in cursus turpis.
 
 Imperdiet massa tincidunt nunc pulvinar. At imperdiet dui accumsan sit amet nulla facilisi. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Quis commodo odio aenean sed adipiscing diam donec adipiscing. Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Lorem ipsum dolor sit amet consectetur adipiscing. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Sed id semper risus in hendrerit gravida rutrum quisque. Aliquam ut porttitor leo a diam sollicitudin tempor id. Volutpat maecenas volutpat blandit aliquam etiam erat."
+font_size = 11
 horizontal_alignment = 0
+autowrap_mode = 2
+justification_flags = 161
 width = 1500.0
 
 [node name="FinePrintLabel" type="Label3D" parent="Background/StartScreen"]
@@ -245,28 +250,35 @@ transform = Transform3D(1, 0, 0, 0, 0.0348985, 0.99939, 0, -0.99939, 0.0348985, 
 text = "Fine Print:"
 
 [node name="EnterNameLabel" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, 0.0348992, 0.99939, 0, -0.99939, 0.0348992, -0.73747, 0.00396264, 0.249342)
+transform = Transform3D(1, 0, 0, 0, 0.0348992, 0.99939, 0, -0.99939, 0.0348992, -0.73747, 0.00730205, 0.222413)
 pixel_size = 0.007
 text = "[P.R.N]
 Please enter your legal name:
 "
+font_size = 17
 horizontal_alignment = 0
+autowrap_mode = 2
 
 [node name="Signature" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.227231, 0.001831, 0.450243)
+transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, -0.227231, 0.00183105, 0.450243)
 pixel_size = 0.007
+outline_modulate = Color(0, 0, 0, 0)
 text = "Signature:________________"
+font_size = 17
 
 [node name="LeftWall" type="MeshInstance3D" parent="Background"]
 transform = Transform3D(2.14577e-06, 0.99939, -0.0349014, 2.25008e-06, -0.0349014, -0.99939, -0.999999, 2.02376e-06, -2.20537e-06, -0.852416, 0.132545, -0.494664)
+visible = false
 mesh = SubResource("11")
 
 [node name="RightWall" type="MeshInstance3D" parent="Background"]
 transform = Transform3D(1.31081e-07, -0.999391, -0.0348994, 0, -0.0348993, 0.99939, -0.999999, -1.28523e-07, -1.49012e-08, 0.914095, 0.132545, -0.494664)
+visible = false
 mesh = SubResource("11")
 
 [node name="BackWall" type="MeshInstance3D" parent="Background"]
 transform = Transform3D(0.999999, 1.74792e-07, -3.05101e-09, 3.05101e-09, -0.0348995, -0.99939, -1.74792e-07, 0.99939, -0.0348995, -0.0125381, 0.376839, -1.40638)
+visible = false
 mesh = SubResource("11")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -286,7 +298,7 @@ one_shot = true
 [node name="MainTheme" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376135, -1.40376)
 stream = ExtResource("2")
-volume_db = -5.0
+volume_db = -28.0
 autoplay = true
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]

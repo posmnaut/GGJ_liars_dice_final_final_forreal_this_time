@@ -74,7 +74,9 @@ public partial class StartGame : Node3D
     public void _on_LineEdit_text_entered(string newText){
         //Play animation here.
         animPlayer.Play("NameEntered");
-        EmitSignal("NameEnteredEventHandler");
+        EmitSignal("NameEntered");
+
+        SetEditableInstance(nameLabel, false);
         //Queue everything for deletion, with the `QueueFree()` function, after a short duration.
         qfTimer.Start();
     }
@@ -85,6 +87,6 @@ public partial class StartGame : Node3D
         qfTimer.QueueFree();
         nameEdit.QueueFree();
 
-        mainThemeAudio.VolumeDb = -19.0f;
+        mainThemeAudio.VolumeDb = -40.0f;
     }
 }

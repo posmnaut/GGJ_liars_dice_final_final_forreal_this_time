@@ -55,11 +55,11 @@ public partial class Main : Node
 		}
 	}
 
-	public void _on_StartGame_NameEnteredEventHandler(){
+	public void _on_start_game_name_entered(){
 		gameStartTimer.Start();
 	}
 
-	public void _on_GameStartTimer_timeout(){
+	public void _on_game_start_timer_timeout(){
 		playerCam.gameStart = false;
 		environment.Visible = true;
 		warden.Visible = true;

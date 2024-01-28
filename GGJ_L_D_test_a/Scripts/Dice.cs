@@ -53,7 +53,7 @@ public partial class Dice : Node3D
         faceLabel.Text = playerCam.playfaceBid.ToString();
     }
 
-    public void _on_PlayerCamera_CupShakenEventHandler(){
+    public void _on_player_camera_cup_shaken(){
         shakenOnce = true;
 
         cupShakeAudio.Play();
@@ -85,7 +85,7 @@ public partial class Dice : Node3D
         // dieLab5.Text = ranNumGen.Next(1, 7).ToString();
     }
 
-    public void _on_PlayerCamera_CupLiftEventHandler(){
+    public void _on_player_camera_cup_lift(){
         for(int i = 0; i < playerDiceArray.Length; i++){
             if(i == 0){
                 dieLab1.Visible = true;
@@ -105,7 +105,7 @@ public partial class Dice : Node3D
         }
     }
 
-    public void _on_PlayerCamera_CupDownEventHandler(){
+    public void _on_player_camera_cup_down(){
         dieLab1.Visible = false;
         dieLab2.Visible = false;
         dieLab3.Visible = false;
@@ -131,7 +131,7 @@ public partial class Dice : Node3D
         if(totalFreqArray[wardenFace-1] < wardenFreq){
             GD.Print("PLAYER WON THE BLUFF");
             warden.playerFirst = true;
-            EmitSignal("PlayerWonBluffEventHandler");
+            EmitSignal("PlayerWonBluff");
         }
         else{
             GD.Print("WARDEN WON THE BLUFF");
@@ -140,12 +140,12 @@ public partial class Dice : Node3D
             //-> than previous `Length`.
             GD.Print("PLAYER DICE AMOUT: " + playerDiceArray.Length);
             warden.playerFirst = false;
-            EmitSignal("WardenWonBluffEventHandler");
+            EmitSignal("WardenWonBluff");
         }
     }
     
     //"Warden" calls bluff:
-    public void _on_Warden_WBluffEventHandler(){
+    public void _on_warden_w_bluff(){
         // warden.wardenLabel.Text = "CALLING [REDACTED]'s BLUFF!";
         // warden.wardenLabel.Visible = true;
         int[] totalFreqArray = new int[6];
@@ -166,12 +166,12 @@ public partial class Dice : Node3D
             //-> than previous `Length`.
             GD.Print("PLAYER DICE AMOUT: " + playerDiceArray.Length);
             warden.playerFirst = false;
-            EmitSignal("WardenWonBluffEventHandler");
+            EmitSignal("WardenWonBluff");
         }
         else{
             GD.Print("PLAYER WON THE BLUFF");
             warden.playerFirst = true;
-            EmitSignal("PlayerWonBluffEventHandler");
+            EmitSignal("PlayerWonBluff");
         }
     }
 }

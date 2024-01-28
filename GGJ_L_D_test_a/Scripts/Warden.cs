@@ -63,7 +63,7 @@ public partial class Warden : Node3D
         }
     }
 
-    public void _on_PlayerCamera_NoEyeContactEventHandler(){
+    public void _on_player_camera_no_eye_contact(){
         wardenLabel.Visible = true;
         wardenLabel.Text = "Come on, look at me! We want it to be fair, don't we!";
         allTimer.Start();
@@ -73,7 +73,7 @@ public partial class Warden : Node3D
         wardenLabel.Visible = false;
     }
 
-    public void _on_PlayerCamera_CupShakenEventHandler(){
+    public void _on_player_camera_cup_shaken(){
         if(playerFirst == false){
             wardenLabel.Visible = false;
             diceLabel.Visible = true;
@@ -124,7 +124,7 @@ public partial class Warden : Node3D
             diceLabel.Text = quantVal + " " + faceVal;
             //FUTURE: Make a return statement that is a boolean and will stop this signal ->
             //-> from firing if the "Warden" calls a bluff.
-            EmitSignal("WBidMadeEventHandler", highestFreq, highestFace);
+            EmitSignal("WBidMade", highestFreq, highestFace);
         }
     }
 
@@ -144,7 +144,7 @@ public partial class Warden : Node3D
     }
 
     //PLAYER WON BLUFF:
-    public void _on_Dice_PlayerWonBluffEventHandler(){
+    public void _on_dice_player_won_bluff(){
         if(randNumGen.Next(1,3) % 2 == 0){
             PWB1Audio.Play();
         }
@@ -165,7 +165,7 @@ public partial class Warden : Node3D
     }
 
     //WARDEN WON BLUFF:
-    public void _on_Dice_WardenWonBluffEventHandler(){
+    public void _on_dice_warden_won_bluff(){
         TOTAL_DICE -= 1;
         wardenLabel.Text = "[FAILURE PROMPT [:] INITIATING LAUGHTER PROTOCOL] HA-HA-HA-HAAA!";
         wardenLabel.Visible = true;
@@ -215,7 +215,7 @@ public partial class Warden : Node3D
         faceVal = decisionNUM.Item2;
 
         diceLabel.Text = quantVal + " " + faceVal;
-        EmitSignal("WBidMadeEventHandler", highestFreq, highestFace);
+        EmitSignal("WBidMade", highestFreq, highestFace);
     }
 
     public void BeginRoundPlayer(){
@@ -242,7 +242,7 @@ public partial class Warden : Node3D
         faceVal = decisionNUM.Item2;
 
         diceLabel.Text = quantVal + " " + faceVal;
-        EmitSignal("WBidMadeEventHandler", highestFreq, highestFace);
+        EmitSignal("WBidMade", highestFreq, highestFace);
     }
     
     public (int, int) MakeBid(int[] dieArray){
@@ -364,10 +364,10 @@ public partial class Warden : Node3D
                     //-> "Warden" does not have enough of that face dice to reach the ->
                     //-> player's bid frequency.
                     if(playerCam.playfreqBid - freqArray[playerCam.playfaceBid] > 5){
-                        EmitSignal("WBluffEventHandler");
+                        EmitSignal("WBluff");
                     }
                     else if(bluffChance > 0.4f){
-                        EmitSignal("WBluffEventHandler");
+                        EmitSignal("WBluff");
                     }
                     else{
                         GD.Print("BIDDING MY FACE");
@@ -434,10 +434,10 @@ public partial class Warden : Node3D
                     //-> "Warden" does not have enough of that face dice to reach the ->
                     //-> player's bid frequency.
                     if(playerCam.playfreqBid - freqArray[playerCam.playfaceBid] > 5){
-                        EmitSignal("WBluffEventHandler");
+                        EmitSignal("WBluff");
                     }
                     else if(bluffChance > 0.4f){
-                        EmitSignal("WBluffEventHandler");
+                        EmitSignal("WBluff");
                     }
                     else{
                         GD.Print("BIDDING PLAYER'S FACE");
