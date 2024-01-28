@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dvdmwa63d5drl"]
+
+[ext_resource type="Texture2D" uid="uid://bwvd75764ukdo" path="res://Resources/Real-Scene/Scene-Full_Walls-Floor-Diffuse.png" id="1_clao7"]
+
+[resource]
+resource_name = "Walls-Roof"
+cull_mode = 2
+albedo_texture = ExtResource("1_clao7")

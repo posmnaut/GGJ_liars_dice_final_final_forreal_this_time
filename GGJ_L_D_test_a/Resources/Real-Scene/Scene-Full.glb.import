@@ -29,6 +29,45 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"1TV": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/1TV.tres"
+},
+"3Tvs": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/3Tvs.tres"
+},
+"Lights-emmission": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/Lights-emmission.tres"
+},
+"Material.021": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/Material.021.tres"
+},
+"Screen": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/Screen.tres"
+},
+"Tables-diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/Tables-diffuse.tres"
+},
+"Wallpieces-diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/Wallpieces-diffuse.tres"
+},
+"Walls-Roof": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/Walls-Roof.tres"
+},
+"Wires-diffuse": {
+"use_external/enabled": true,
+"use_external/path": "res://Resources/Real-Scene/Wires-diffuse.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
