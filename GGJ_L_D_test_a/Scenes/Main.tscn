@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://cm01wq4r7ueca"]
+[gd_scene load_steps=151 format=3 uid="uid://cm01wq4r7ueca"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.cs" id="2"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dh78eqfpny4eh" path="res://Resources/Demo-Scene/Demo-Scene_TV-Diffuse.png" id="16_ca5f5"]
 [ext_resource type="Texture2D" uid="uid://c3dp554uu2f8h" path="res://Resources/Demo-Scene/Demo-Scene_DecalLeakingMossy (6).png" id="17_f6480"]
 [ext_resource type="Texture2D" uid="uid://cxa408fwpgc0g" path="res://Resources/Demo-Scene/Demo-Scene_ch_factory_windows1.png" id="18_ga2vu"]
+[ext_resource type="Shader" path="res://Scenes/Main.gdshader" id="19_h54y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lsv33"]
 size = Vector3(1.12695, 1, 0.813965)
@@ -72,6 +73,29 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nt04r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcd1b"]
+shader = ExtResource("19_h54y2")
+shader_parameter/change_color_depth = true
+shader_parameter/target_color_depth = 5
+shader_parameter/dithering = true
+shader_parameter/scale_resolution = true
+shader_parameter/target_resolution_scale = 3
+shader_parameter/enable_recolor = false
+
+[sub_resource type="GDScript" id="GDScript_ad2y2"]
+script/source = "extends SubViewportContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvogs"]
 resource_name = "Material.007"
@@ -1648,23 +1672,39 @@ one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Environment/PlayerCup"]
 stream = ExtResource("6")
-volume_db = -5.0
+volume_db = -20.0
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Environment/PlayerCup"]
 stream = ExtResource("8")
+volume_db = -20.0
 
-[node name="PlayerCamera" type="Camera3D" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_dcd1b")
+offset_top = -4.0
+offset_right = 1152.0
+offset_bottom = 647.0
+stretch = true
+script = SubResource("GDScript_ad2y2")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1152, 651)
+render_target_update_mode = 4
+
+[node name="PlayerCamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.05, 0.9)
 fov = 80.0
 script = ExtResource("2")
 
-[node name="LookAtRight" type="Node3D" parent="PlayerCamera"]
+[node name="LookAtRight" type="Node3D" parent="SubViewportContainer/SubViewport/PlayerCamera"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, -7.45058e-08, 0, 7.45058e-08, 0.999999, 0.715795, -0.363515, -1.10012)
 
-[node name="LookAtLeft" type="Node3D" parent="PlayerCamera"]
+[node name="LookAtLeft" type="Node3D" parent="SubViewportContainer/SubViewport/PlayerCamera"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, -7.45058e-08, 0, 7.45058e-08, 0.999999, -0.830057, -0.469241, -0.816259)
 
-[node name="LookAtDown" type="Node3D" parent="PlayerCamera"]
+[node name="LookAtDown" type="Node3D" parent="SubViewportContainer/SubViewport/PlayerCamera"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, -8.9407e-08, 0, 8.9407e-08, 0.999999, 0, -0.503825, -0.693569)
 
 [node name="Warden" type="Node3D" parent="."]
@@ -1727,7 +1767,7 @@ modulate = Color(0, 0, 0, 1)
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Dice"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555078, 0.40343)
 stream = ExtResource("7")
-volume_db = -5.0
+volume_db = -20.0
 
 [node name="FreqNumLabel" type="Label3D" parent="Dice"]
 transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, -0.332332, 0.595698, 0.447384)
@@ -1985,29 +2025,29 @@ skeleton = NodePath("")
 
 [connection signal="timeout" from="Environment/PlayerCup/ShakeTimer" to="Environment/PlayerCup" method="_on_ShakeTimer_timeout"]
 [connection signal="finished" from="Environment/PlayerCup/AudioStreamPlayer3D" to="Environment/PlayerCup" method="_on_AudioStreamPlayer3D_finished"]
-[connection signal="BluffInputHandler" from="PlayerCamera" to="Dice" method="_on_PlayerCamera_BluffInputHandler"]
-[connection signal="CupDown" from="PlayerCamera" to="Environment/PlayerCup" method="_on_player_camera_cup_down"]
-[connection signal="CupDown" from="PlayerCamera" to="Dice" method="_on_player_camera_cup_down"]
-[connection signal="CupLift" from="PlayerCamera" to="Environment/PlayerCup" method="_on_player_camera_cup_lift"]
-[connection signal="CupLift" from="PlayerCamera" to="Dice" method="_on_player_camera_cup_lift"]
-[connection signal="CupShaken" from="PlayerCamera" to="Environment/PlayerCup" method="_on_player_camera_cup_shaken"]
-[connection signal="CupShaken" from="PlayerCamera" to="Warden" method="_on_player_camera_cup_shaken"]
-[connection signal="CupShaken" from="PlayerCamera" to="Dice" method="_on_player_camera_cup_shaken"]
-[connection signal="NoEyeContact" from="PlayerCamera" to="Warden" method="_on_player_camera_no_eye_contact"]
-[connection signal="SubmitInputHandler" from="PlayerCamera" to="Warden" method="_on_PlayerCamera_SubmitInputHandler"]
-[connection signal="WBidMade" from="Warden" to="PlayerCamera" method="_on_warden_w_bid_made"]
+[connection signal="BluffInputHandler" from="SubViewportContainer/SubViewport/PlayerCamera" to="Dice" method="_on_PlayerCamera_BluffInputHandler"]
+[connection signal="CupDown" from="SubViewportContainer/SubViewport/PlayerCamera" to="Environment/PlayerCup" method="_on_player_camera_cup_down"]
+[connection signal="CupDown" from="SubViewportContainer/SubViewport/PlayerCamera" to="Dice" method="_on_player_camera_cup_down"]
+[connection signal="CupLift" from="SubViewportContainer/SubViewport/PlayerCamera" to="Environment/PlayerCup" method="_on_player_camera_cup_lift"]
+[connection signal="CupLift" from="SubViewportContainer/SubViewport/PlayerCamera" to="Dice" method="_on_player_camera_cup_lift"]
+[connection signal="CupShaken" from="SubViewportContainer/SubViewport/PlayerCamera" to="Environment/PlayerCup" method="_on_player_camera_cup_shaken"]
+[connection signal="CupShaken" from="SubViewportContainer/SubViewport/PlayerCamera" to="Warden" method="_on_player_camera_cup_shaken"]
+[connection signal="CupShaken" from="SubViewportContainer/SubViewport/PlayerCamera" to="Dice" method="_on_player_camera_cup_shaken"]
+[connection signal="NoEyeContact" from="SubViewportContainer/SubViewport/PlayerCamera" to="Warden" method="_on_player_camera_no_eye_contact"]
+[connection signal="SubmitInputHandler" from="SubViewportContainer/SubViewport/PlayerCamera" to="Warden" method="_on_PlayerCamera_SubmitInputHandler"]
+[connection signal="WBidMade" from="Warden" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_warden_w_bid_made"]
 [connection signal="WBluff" from="Warden" to="Dice" method="_on_warden_w_bluff"]
 [connection signal="timeout" from="Warden/AllTimer" to="Warden" method="_on_AllTimer_timeout"]
 [connection signal="timeout" from="Warden/DiceDecideTimer" to="Warden" method="_on_DiceDecideTimer_timeout"]
-[connection signal="PlayerWonBluff" from="Dice" to="PlayerCamera" method="_on_dice_player_won_bluff"]
+[connection signal="PlayerWonBluff" from="Dice" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_dice_player_won_bluff"]
 [connection signal="PlayerWonBluff" from="Dice" to="Warden" method="_on_dice_player_won_bluff"]
-[connection signal="WardenWonBluff" from="Dice" to="PlayerCamera" method="_on_dice_warden_won_bluff"]
+[connection signal="WardenWonBluff" from="Dice" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_dice_warden_won_bluff"]
 [connection signal="WardenWonBluff" from="Dice" to="Warden" method="_on_dice_warden_won_bluff"]
-[connection signal="BluffInputHandler" from="BidSelect" to="PlayerCamera" method="_on_bid_select_bluff_input_handler"]
-[connection signal="FaceDecreaseInputHandler" from="BidSelect" to="PlayerCamera" method="_on_bid_select_face_decrease_input_handler"]
-[connection signal="FaceIncreaseInputHandler" from="BidSelect" to="PlayerCamera" method="_on_bid_select_face_increase_input_handler"]
-[connection signal="FreqDecreaseInputHandler" from="BidSelect" to="PlayerCamera" method="_on_bid_select_freq_decrease_input_handler"]
-[connection signal="FreqIncreaseInputHandler" from="BidSelect" to="PlayerCamera" method="_on_bid_select_freq_increase_input_handler"]
-[connection signal="SubmitInputHandler" from="BidSelect" to="PlayerCamera" method="_on_bid_select_submit_input_handler"]
+[connection signal="BluffInputHandler" from="BidSelect" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_bid_select_bluff_input_handler"]
+[connection signal="FaceDecreaseInputHandler" from="BidSelect" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_bid_select_face_decrease_input_handler"]
+[connection signal="FaceIncreaseInputHandler" from="BidSelect" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_bid_select_face_increase_input_handler"]
+[connection signal="FreqDecreaseInputHandler" from="BidSelect" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_bid_select_freq_decrease_input_handler"]
+[connection signal="FreqIncreaseInputHandler" from="BidSelect" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_bid_select_freq_increase_input_handler"]
+[connection signal="SubmitInputHandler" from="BidSelect" to="SubViewportContainer/SubViewport/PlayerCamera" method="_on_bid_select_submit_input_handler"]
 [connection signal="NameEntered" from="StartGame" to="." method="_on_start_game_name_entered"]
 [connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]

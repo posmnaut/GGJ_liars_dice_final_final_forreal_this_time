@@ -10,3 +10,6 @@ res://Scripts/PlayerCup.cs
 res://Scripts/StartGame.cs
 res://Scripts/Warden.cs
 res://Scenes/demo_scene.tscn
+res://Scenes/CanvasLayer.gd
+res://Scripts/SubViewport.gd
+res://Scenes/Main.gdshader
