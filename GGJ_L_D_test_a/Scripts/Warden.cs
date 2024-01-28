@@ -209,6 +209,7 @@ public partial class Warden : Node3D
         else if(diceClass.roundNum == 3){
             //FIRST TURN AND WARDEN FIRST:
             if(initialBid == true && playerFirst == false){
+                GD.Print("FIRED CORRECTLY");
                 //New round so all round specific variables are reset to default.
                 highestFreq = 1;
                 highestFace = 1;
@@ -355,7 +356,6 @@ public partial class Warden : Node3D
             }
         }
 
-        initialBid = false;
         //NOTE: `decisionNUM[0]` is the "frequency" of the bid, and `decisionNUM[1]` is ->
         //-> the "face" of the bid.
         (int, int) decisionNUM = MakeBid(dieArray);
@@ -364,10 +364,12 @@ public partial class Warden : Node3D
 
         diceLabel.Text = quantVal + " " + faceVal;
         EmitSignal("WBidMade", highestFreq, highestFace);
+        initialBid = false;
     }
     
     public (int, int) MakeBid(int[] dieArray){
         if(initialBid == true){
+            GD.Print("Ran new round");
             initialBid = false;
 
             //BELOW: The chain of `if-statements` below, dictact the chance and amount the ->
