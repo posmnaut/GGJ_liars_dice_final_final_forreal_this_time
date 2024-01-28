@@ -811,6 +811,7 @@ public partial class PlayerCamera : Camera3D
     // }
 
     public void _on_warden_w_bid_made(int highestFreq, int highestFace){
+        // GD.Print("DEBUGGER: WARDEN BID MADE");
         previousHighestFreq = highestFreq;
         playfreqBid = highestFreq;
 
@@ -876,10 +877,10 @@ public partial class PlayerCamera : Camera3D
             GD.Print("BLUFF");
             EmitSignal("BluffInputHandler", previousHighestFreq, previousHighestFace);
         }
-        previousHighestFace = 0;
-        previousHighestFreq = 0;
-        playfreqBid = 1;
-        playfaceBid = 1;
+        // previousHighestFace = 0;
+        // previousHighestFreq = 0;
+        // playfreqBid = 1;
+        // playfaceBid = 1;
     }
 
     //PLAYER WON BLUFF:
@@ -897,6 +898,11 @@ public partial class PlayerCamera : Camera3D
 
     //WARDEN WON BLUFF:
     public void _on_dice_warden_won_bluff(){
+        // previousHighestFace = 0;
+        // previousHighestFreq = 0;
+        // playfreqBid = 1;
+        // playfaceBid = 1;
+
         //ADD: Revoke player priority next turn.
         bidRound = false;
     }
