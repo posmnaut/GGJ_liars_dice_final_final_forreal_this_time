@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\LiarsDie4.0\\LiarsDie.csproj": {}
+    "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj": {}
   },
   "projects": {
-    "E:\\LiarsDie4.0\\LiarsDie.csproj": {
+    "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\LiarsDie4.0\\LiarsDie.csproj",
+        "projectUniqueName": "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj",
         "projectName": "LiarsDie",
-        "projectPath": "E:\\LiarsDie4.0\\LiarsDie.csproj",
-        "packagesPath": "C:\\Users\\alexm\\.nuget\\packages\\",
-        "outputPath": "E:\\LiarsDie4.0\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj",
+        "packagesPath": "C:\\Users\\Emily\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alexm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Emily\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
