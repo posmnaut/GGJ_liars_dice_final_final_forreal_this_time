@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Godot Projects\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj": {}
+    "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj": {}
   },
   "projects": {
-    "D:\\Godot Projects\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj": {
+    "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Godot Projects\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj",
+        "projectUniqueName": "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj",
         "projectName": "LiarsDie",
-        "projectPath": "D:\\Godot Projects\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj",
-        "packagesPath": "C:\\Users\\desig\\.nuget\\packages\\",
-        "outputPath": "D:\\Godot Projects\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\LiarsDie.csproj",
+        "packagesPath": "C:\\Users\\Emily\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emily\\Documents\\GitHub\\GGJ_liars_dice_final_final_forreal_this_time\\GGJ_L_D_test_a\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\desig\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Emily\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.418\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
