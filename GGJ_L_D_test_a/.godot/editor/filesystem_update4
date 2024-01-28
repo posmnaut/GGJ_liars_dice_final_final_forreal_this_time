@@ -1,15 +1,12 @@
 res://default_env.tres
 res://Scenes/Main.tscn
+res://Scripts/BidSelect.cs
+res://Scenes/Main.gd
 res://Scenes/BidSelect.tscn
 res://Scenes/StartGame.tscn
-res://Scripts/BidSelect.cs
 res://Scripts/Dice.cs
 res://Scripts/Main.cs
 res://Scripts/PlayerCamera.cs
 res://Scripts/PlayerCup.cs
 res://Scripts/StartGame.cs
 res://Scripts/Warden.cs
-res://Scenes/demo_scene.tscn
-res://Scenes/CanvasLayer.gd
-res://Scripts/SubViewport.gd
-res://Scenes/Main.gdshader

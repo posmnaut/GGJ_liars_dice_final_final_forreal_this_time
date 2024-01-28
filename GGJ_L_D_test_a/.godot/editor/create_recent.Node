@@ -1,8 +1,4 @@
-Camera3D
-SubViewport
-CanvasLayer
-SubViewportContainer
-ShaderGlobalsOverride
+AnimationPlayer
 Node3D
 MeshInstance3D
 Node
