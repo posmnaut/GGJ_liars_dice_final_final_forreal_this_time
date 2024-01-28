@@ -1,11 +1,11 @@
 extends Node
 
-@onready var up_freq_butt_anim = $"Demo-Scene-Root/UpFreqButton/AnimationPlayer"
-@onready var up_face_butt_anim = $"Demo-Scene-Root/UpFaceButton/AnimationPlayer"
-@onready var dwn_freq_butt_anim = $"Demo-Scene-Root/DownFreqButton/AnimationPlayer"
-@onready var dwn_face_butt_anim = $"Demo-Scene-Root/DownFaceButton/AnimationPlayer"
-@onready var sub_butt_anim = $"Demo-Scene-Root/Submit-Base/AnimationPlayer"
-@onready var bluff_butt_anim = $"Demo-Scene-Root/Bluff-Base/AnimationPlayer"
+@onready var up_freq_butt_anim = $BidSelect/FeqIncrease/AnimationPlayer
+@onready var up_face_butt_anim = $BidSelect/FaceIncrease/AnimationPlayer
+@onready var dwn_freq_butt_anim = $BidSelect/FreqDecrease/AnimationPlayer
+@onready var dwn_face_butt_anim = $BidSelect/FaceDecrease/AnimationPlayer
+@onready var sub_butt_anim = $"BidSelect/Submit-button/AnimationPlayer"
+@onready var bluff_butt_anim = $"BidSelect/Bluff-button/AnimationPlayer"
 
 var butt_debug = 0
 
@@ -21,17 +21,17 @@ func _process(delta):
 	
 func _animate_button(button) :
 	if button == 0:
-		up_freq_butt_anim.play("butt_anim_a");
+		up_freq_butt_anim.play("butt_anim");
 	if button == 1:
-		up_face_butt_anim.play("butt_anim_b");
+		up_face_butt_anim.play("butt_anim");
 	if button == 2:
-		dwn_freq_butt_anim.play("butt_anim_c");
+		dwn_freq_butt_anim.play("butt_anim");
 	if button == 3:
-		dwn_face_butt_anim.play("butt_anim_d");
+		dwn_face_butt_anim.play("butt_anim");
 	if button == 4:
-		sub_butt_anim.play("butt_anim_f");
+		sub_butt_anim.play("butt_anim");
 	if button == 5:
-		bluff_butt_anim.play("butt_anim_e");
+		bluff_butt_anim.play("butt_anim");
 
 func _on_bid_select_button_anim(button):
 	_animate_button(button)

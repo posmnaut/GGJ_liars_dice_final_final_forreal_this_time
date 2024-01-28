@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=28 format=3 uid="uid://cm01wq4r7ueca"]
+[gd_scene load_steps=42 format=3 uid="uid://cm01wq4r7ueca"]
 
 
 [ext_resource type="Script" path="res://Scenes/Main.gd" id="1_xilre"]
@@ -99,6 +98,119 @@ func _process(_delta):
 "
 
 
+[sub_resource type="Animation" id="Animation_w5ldo"]
+resource_name = "butt_anim_a"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up2-b")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.145578, -0.0840497, 0.1, 1, 0, 0.046, -0.084, 0.2, 1, 0, 0.145578, -0.0840497)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5nw5"]
+_data = {
+"butt_anim": SubResource("Animation_w5ldo")
+}
+
+[sub_resource type="Animation" id="Animation_soya2"]
+resource_name = "butt_anim_b"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("down1-b")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.192104, 0, 0.1, 1, 0, 0.092, 0, 0.2, 1, 0, 0.192104, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_evuha"]
+_data = {
+"butt_anim": SubResource("Animation_soya2")
+}
+
+[sub_resource type="Animation" id="Animation_tv7xs"]
+resource_name = "butt_anim_c"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up2-b")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -12.4005, -1.18616, -6.33265, 0.1, 1, -12.401, -1.286, -6.333, 0.2, 1, -12.4005, -1.18616, -6.33265)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7aa6h"]
+_data = {
+"butt_anim": SubResource("Animation_tv7xs")
+}
+
+[sub_resource type="Animation" id="Animation_3j7kk"]
+resource_name = "butt_anim"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("down1-b")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.187391, -0.0575595, -0.22343, 0.1, 1, -0.187, -0.068, -0.223, 0.2, 1, -0.187391, -0.0575595, -0.22343)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qk26p"]
+_data = {
+"butt_anim": SubResource("Animation_3j7kk")
+}
+
+[sub_resource type="Animation" id="Animation_n5gm1"]
+resource_name = "butt_anim"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Submit-Button")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.505, -0.350937, -0.314105, 0.1, 1, 0.505, -0.361, -0.314, 0.2, 1, 0.505, -0.350937, -0.314105)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7bsvt"]
+_data = {
+"butt_anim": SubResource("Animation_n5gm1")
+}
+
+[sub_resource type="Animation" id="Animation_wg6xp"]
+resource_name = "but_anim"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bluff-Botton")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.50528, -0.35135, -0.0922929, 0.1, 1, -0.505, -0.361, -0.092, 0.2, 1, -0.50528, -0.35135, -0.0922929)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7tqnd"]
+_data = {
+"butt_anim": SubResource("Animation_wg6xp")
+}
+
+[sub_resource type="Animation" id="Animation_8q27q"]
+resource_name = "butt_anim_d"
+length = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("down2-b")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.207329, 0.0782635, 0.900699, 0.1, 1, 0.207, 0.068, 0.901, 0.2, 1, 0.207329, 0.0782635, 0.900699)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sky8l"]
+_data = {
+"butt_anim_d": SubResource("Animation_8q27q")
+}
+
+
 [node name="Main" type="Node"]
 script = ExtResource("1_xilre")
 
@@ -189,7 +301,7 @@ metadata/_edit_use_anchors_ = true
 handle_input_locally = false
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
-size = Vector2i(1152, 656)
+size = Vector2i(1152, 655)
 render_target_update_mode = 4
 
 [node name="PlayerCamera" type="Camera3D" parent="Control/SubViewportContainer/SubViewport"]
@@ -293,6 +405,11 @@ transform = Transform3D(1.25, 0, 0, 0, 1.08253, 0.625, 0, -0.625, 1.08253, 0, 0.
 [node name="FaceI" parent="BidSelect/FaceIncrease" index="2"]
 transform = Transform3D(1.75, 0, 0, 0, 1.48408, 0.927359, 0, -0.927359, 1.48408, 0, 9.53674e-07, -1.19209e-06)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BidSelect/FaceIncrease" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_m5nw5")
+}
+
 [node name="FaceDecrease" parent="BidSelect" index="1"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.3, -0.392048, -0.169183)
 
@@ -302,11 +419,13 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 [node name="down1-b" parent="BidSelect/FaceDecrease" index="1"]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 9.12353e-08, 0, -9.12353e-08, 1.25, 0, 0.192104, 0)
 
-[node name="FaceD" parent="BidSelect/FaceDecrease" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 0, 0)
-
 [node name="FD" parent="BidSelect/FaceDecrease/FaceD" index="0"]
 transform = Transform3D(1.555, 0, 0, 0, 1.555, 0, 0, 0, 1.555, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BidSelect/FaceDecrease" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_evuha")
+}
 
 [node name="FeqIncrease" parent="BidSelect" index="2"]
 transform = Transform3D(0.05, 0, 0, 0, 0.0433013, -0.025, 0, 0.025, 0.0433013, 0.3, -0.487974, -0.14717)
@@ -319,6 +438,11 @@ transform = Transform3D(1.25, 0, 0, 0, 1.08253, 0.625, 0, -0.625, 1.08253, -12.4
 
 [node name="FreqI" parent="BidSelect/FeqIncrease" index="2"]
 transform = Transform3D(1.75, 0, 0, 0, 1.48408, 0.927359, 0, -0.927359, 1.48408, -12.4005, -1.35084, -6.23757)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BidSelect/FeqIncrease" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_7aa6h")
+}
 
 [node name="FreqDecrease" parent="BidSelect" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, -0.133, -0.321883, 0.0578265)
@@ -335,6 +459,11 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, -5.55112e-17, 0, 5.55112e-17, 0.05,
 [node name="FRD" parent="BidSelect/FreqDecrease/FreqD" index="0"]
 transform = Transform3D(1.555, 0, 0, 0, 1.555, 0, 0, 0, 1.555, 0, 0, 0)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BidSelect/FreqDecrease" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_qk26p")
+}
+
 [node name="Submit-Button" parent="BidSelect/Submit-button" index="0"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.505, -0.350937, -0.314105)
 
@@ -346,6 +475,11 @@ transform = Transform3D(-0.085, 0, 0, 0, -0.085, 0, 0, 0, -0.085, 0.506593, -0.6
 
 [node name="CollisionShape3D" parent="BidSelect/Submit-button/SubmitArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.78814e-07, 0, 1.78814e-07, 1, 0.00555468, -2.77277, -4.76886)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BidSelect/Submit-button" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_7bsvt")
+}
 
 [node name="Bluff-button" parent="BidSelect" index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.22407)
@@ -361,6 +495,11 @@ transform = Transform3D(0.1, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.469509, -0.222335,
 
 [node name="CollisionShape3D" parent="BidSelect/Bluff-button/BluffArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.78814e-07, 0, 1.78814e-07, 1, -0.327636, -2.69855, -4.82951)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BidSelect/Bluff-button" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_7tqnd")
+}
 
 [node name="StartGame" parent="." instance=ExtResource("13")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.14252, 0.9)
@@ -379,7 +518,8 @@ transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0256517, 0.599709, -0.484297)
 
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Demo-Scene-Root/DownFaceButton"]
+[node name="Demo-Scene-Root_DownFaceButton#AnimationPlayer" type="AnimationPlayer" parent="."]
+
 libraries = {
 "": SubResource("AnimationLibrary_sky8l")
 }

@@ -20,10 +20,10 @@ public partial class StartGame : Node3D
 	PlayerCamera playerCam;
 
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-        playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
 
 
 		nameLabel = GetTree().Root.GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild<Label3D>(0);
