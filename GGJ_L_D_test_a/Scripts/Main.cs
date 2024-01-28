@@ -66,4 +66,12 @@ public partial class Main : Node
 		diceSpatial.Visible = true;
 		bidSelect.Visible = true;
 	}
+
+	public void _on_dice_game_end_player_win(){
+
+	}
+
+	public void _on_dice_game_end_player_loss(){
+		
+	}
 }

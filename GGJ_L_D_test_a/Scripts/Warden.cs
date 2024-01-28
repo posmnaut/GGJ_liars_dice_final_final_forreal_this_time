@@ -24,6 +24,7 @@ public partial class Warden : Node3D
     AudioStreamPlayer3D PWB1Audio;
     AudioStreamPlayer3D PWB2Audio;
     PlayerCamera playerCam;
+    Dice diceClass;
     public bool playerFirst {get; set;} = false;
     public bool initialBid = true;
     public int[] dieArray {get; set;} = new int[5];
@@ -56,6 +57,7 @@ public partial class Warden : Node3D
         PWB2Audio = GetTree().Root.GetChild(0).GetChild(2).GetChild<AudioStreamPlayer3D>(6);
 
         playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
+        diceClass = GetTree().Root.GetChild(0).GetChild<Dice>(3);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -75,6 +77,36 @@ public partial class Warden : Node3D
         wardenLabel.Text = "Come on, look at me! We want it to be fair, don't we!";
         allTimer.Start();
     }
+
+    public void _on_dice_round_two_start(bool playerWonRound){
+        if(playerWonRound == true){
+            GD.Print("Oh shucks I lost. Good job! Let's spice it up!");
+        }
+        else{
+            GD.Print("You lost? I'm sorry. Let's spice it up!");
+        }
+        dieArray = new int[5];
+        initialBid = true;
+    }
+
+    public void _on_dice_round_three_start(bool playerWonRound){
+        if(playerWonRound == true){
+            GD.Print("Oh shucks I lost. Good job! Let's spice it up EVEN MORE!");
+        }
+        else{
+            GD.Print("You lost? I'm sorry. Let's spice it up EVEN MORE!");
+        }
+        dieArray = new int[5];
+        initialBid = true;
+    }
+
+    public void _on_dice_game_end_player_win(){
+
+	}
+
+	public void _on_dice_game_end_player_loss(){
+		
+	}
 
     public void _on_AllTimer_timeout(){
         wardenLabel.Visible = false;
@@ -96,42 +128,122 @@ public partial class Warden : Node3D
     }
 
     public void _on_DiceDecideTimer_timeout(){
-        //FIRST TURN AND WARDEN FIRST:
-        if(initialBid == true && playerFirst == false){
-            //New round so all round specific variables are reset to default.
-            highestFreq = 1;
-            highestFace = 1;
-            freqArray = new int[7];
+        if(diceClass.roundNum == 1){
+            //FIRST TURN AND WARDEN FIRST:
+            if(initialBid == true && playerFirst == false){
+                //New round so all round specific variables are reset to default.
+                highestFreq = 1;
+                highestFace = 1;
+                freqArray = new int[7];
 
-            BeginRoundWarden();
+                BeginRoundWarden();
+            }
+            //FIRST TURN AND PLAYER FIRST:
+            else if(initialBid == true && playerFirst == true){
+                //TWO LINES BELOW: These two lines of code make sure that the `highestFreq` ->
+                //-> and `highestFace` variables are not set to the default of `0`, but instead ->
+                //-> set to whatever frequency and face bid the player chose. This is ->
+                //-> important because we want to make sure the "Warden" interacts with the ->
+                //-> player's first bid and does not make any illegal game actions.
+                highestFreq = playerCam.playfreqBid;
+                highestFace = playerCam.playfaceBid;
+
+                //New round so all round specific variables are reset to default.
+                freqArray = new int[7];
+                
+                BeginRoundPlayer();
+            }
+            //MID ROUND TURN:
+            else{
+                //NOTE: `decisionNUM[0]` is the "frequency" of the bid, and `decisionNUM[1]` is ->
+                //-> the "face" of the bid.
+                (int, int) decisionNUM = MakeBid(dieArray);
+                quantVal = decisionNUM.Item1;
+                faceVal = decisionNUM.Item2;
+
+                diceLabel.Text = quantVal + " " + faceVal;
+                //FUTURE: Make a return statement that is a boolean and will stop this signal ->
+                //-> from firing if the "Warden" calls a bluff.
+                EmitSignal("WBidMade", highestFreq, highestFace);
+            }
         }
-        //FIRST TURN AND PLAYER FIRST:
-        else if(initialBid == true && playerFirst == true){
-            //TWO LINES BELOW: These two lines of code make sure that the `highestFreq` ->
-            //-> and `highestFace` variables are not set to the default of `0`, but instead ->
-            //-> set to whatever frequency and face bid the player chose. This is ->
-            //-> important because we want to make sure the "Warden" interacts with the ->
-            //-> player's first bid and does not make any illegal game actions.
-            highestFreq = playerCam.playfreqBid;
-            highestFace = playerCam.playfaceBid;
+        else if(diceClass.roundNum == 2){
+            //FIRST TURN AND WARDEN FIRST:
+            if(initialBid == true && playerFirst == false){
+                //New round so all round specific variables are reset to default.
+                highestFreq = 1;
+                highestFace = 1;
+                freqArray = new int[7];
 
-            //New round so all round specific variables are reset to default.
-            freqArray = new int[7];
-            
-            BeginRoundPlayer();
+                BeginRoundWarden();
+            }
+            //FIRST TURN AND PLAYER FIRST:
+            else if(initialBid == true && playerFirst == true){
+                //TWO LINES BELOW: These two lines of code make sure that the `highestFreq` ->
+                //-> and `highestFace` variables are not set to the default of `0`, but instead ->
+                //-> set to whatever frequency and face bid the player chose. This is ->
+                //-> important because we want to make sure the "Warden" interacts with the ->
+                //-> player's first bid and does not make any illegal game actions.
+                highestFreq = playerCam.playfreqBid;
+                highestFace = playerCam.playfaceBid;
+
+                //New round so all round specific variables are reset to default.
+                freqArray = new int[7];
+                
+                BeginRoundPlayer();
+            }
+            //MID ROUND TURN:
+            else{
+                //NOTE: `decisionNUM[0]` is the "frequency" of the bid, and `decisionNUM[1]` is ->
+                //-> the "face" of the bid.
+                (int, int) decisionNUM = MakeBid(dieArray);
+                quantVal = decisionNUM.Item1;
+                faceVal = decisionNUM.Item2;
+
+                diceLabel.Text = quantVal + " " + faceVal;
+                //FUTURE: Make a return statement that is a boolean and will stop this signal ->
+                //-> from firing if the "Warden" calls a bluff.
+                EmitSignal("WBidMade", highestFreq, highestFace);
+            }
         }
-        //MID ROUND TURN:
-        else{
-            //NOTE: `decisionNUM[0]` is the "frequency" of the bid, and `decisionNUM[1]` is ->
-            //-> the "face" of the bid.
-            (int, int) decisionNUM = MakeBid(dieArray);
-            quantVal = decisionNUM.Item1;
-            faceVal = decisionNUM.Item2;
+        else if(diceClass.roundNum == 3){
+            //FIRST TURN AND WARDEN FIRST:
+            if(initialBid == true && playerFirst == false){
+                //New round so all round specific variables are reset to default.
+                highestFreq = 1;
+                highestFace = 1;
+                freqArray = new int[7];
 
-            diceLabel.Text = quantVal + " " + faceVal;
-            //FUTURE: Make a return statement that is a boolean and will stop this signal ->
-            //-> from firing if the "Warden" calls a bluff.
-            EmitSignal("WBidMade", highestFreq, highestFace);
+                BeginRoundWarden();
+            }
+            //FIRST TURN AND PLAYER FIRST:
+            else if(initialBid == true && playerFirst == true){
+                //TWO LINES BELOW: These two lines of code make sure that the `highestFreq` ->
+                //-> and `highestFace` variables are not set to the default of `0`, but instead ->
+                //-> set to whatever frequency and face bid the player chose. This is ->
+                //-> important because we want to make sure the "Warden" interacts with the ->
+                //-> player's first bid and does not make any illegal game actions.
+                highestFreq = playerCam.playfreqBid;
+                highestFace = playerCam.playfaceBid;
+
+                //New round so all round specific variables are reset to default.
+                freqArray = new int[7];
+                
+                BeginRoundPlayer();
+            }
+            //MID ROUND TURN:
+            else{
+                //NOTE: `decisionNUM[0]` is the "frequency" of the bid, and `decisionNUM[1]` is ->
+                //-> the "face" of the bid.
+                (int, int) decisionNUM = MakeBid(dieArray);
+                quantVal = decisionNUM.Item1;
+                faceVal = decisionNUM.Item2;
+
+                diceLabel.Text = quantVal + " " + faceVal;
+                //FUTURE: Make a return statement that is a boolean and will stop this signal ->
+                //-> from firing if the "Warden" calls a bluff.
+                EmitSignal("WBidMade", highestFreq, highestFace);
+            }
         }
     }
 
