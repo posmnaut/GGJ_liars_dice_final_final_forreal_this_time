@@ -84,19 +84,19 @@ public partial class Dice : Node3D
             playerDiceArray[i] = ranNumGen.Next(1, 7);
 
             if(i == 0){
-                dieLab1.Text = playerDiceArray[i].ToString();
+                // dieLab1.Text = playerDiceArray[i].ToString();
             }
             else if(i == 1){
-                dieLab2.Text = playerDiceArray[i].ToString();
+                // dieLab2.Text = playerDiceArray[i].ToString();
             }
             else if(i == 2){
-                dieLab3.Text = playerDiceArray[i].ToString();
+                // dieLab3.Text = playerDiceArray[i].ToString();
             }
             else if(i == 3){
-                dieLab4.Text = playerDiceArray[i].ToString();
+                // dieLab4.Text = playerDiceArray[i].ToString();
             }
             else if(i == 4){
-                dieLab5.Text = playerDiceArray[i].ToString();
+                // dieLab5.Text = playerDiceArray[i].ToString();
             }
         }
 
