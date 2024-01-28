@@ -27,8 +27,8 @@ public partial class BidSelect : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		SC1Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(8);
-		SC2Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(9);
+		SC1Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(5);
+		SC2Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(6);
 
 	}
 

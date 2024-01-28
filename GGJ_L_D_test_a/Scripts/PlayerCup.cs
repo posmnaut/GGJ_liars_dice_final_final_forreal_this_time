@@ -28,7 +28,7 @@ public partial class PlayerCup : StaticBody3D
 		cupLiftAudio2 = GetTree().Root.GetChild(0).GetChild(0).GetChild(3).GetChild<AudioStreamPlayer3D>(6);
 
 		diceSpatial = GetTree().Root.GetChild(0).GetChild<Dice>(3);
-		playerCam = GetTree().Root.GetChild(0).GetChild<PlayerCamera>(1);
+		playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
 	}
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

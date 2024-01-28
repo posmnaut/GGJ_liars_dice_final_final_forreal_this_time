@@ -39,7 +39,7 @@ public partial class Main : Node
 		// diceSpatial.Visible = false;
 		// bidSelect.Visible = false;
 
-		playerCam = GetTree().Root.GetChild(0).GetChild<PlayerCamera>(1);
+		playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
 		oldPlayerTrans = playerCam.Transform;
 		gameStartAngle = GetTree().Root.GetChild(0).GetChild<Node3D>(7);
 		playerCam.Transform = gameStartAngle.Transform;
@@ -51,7 +51,7 @@ public partial class Main : Node
 		if(playerCam.gameStart != true){
 			Transform3D startLocation = playerCam.Transform;
 			Transform3D endLocation = oldPlayerTrans;
-			playerCam.Transform = startLocation.InterpolateWith(endLocation, 0.09f + (float) delta);
+			playerCam.Transform = startLocation.InterpolateWith(endLocation, 0.001f + (float) delta);
 		}
 	}
 

@@ -207,8 +207,8 @@ skeleton = NodePath("")
 
 [node name="LegalNameLabel" type="Label3D" parent="Background/StartScreen"]
 transform = Transform3D(1, 0, 0, 0, -0.0523361, 0.998627, 0, -0.998627, -0.0523361, 0.0691844, 0.00335002, 0.453165)
-pixel_size = 0.007
 modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
 text = "TEMPORARY"
 font_size = 17
 uppercase = true
@@ -251,7 +251,6 @@ text = "Fine Print:"
 
 [node name="EnterNameLabel" type="Label3D" parent="Background/StartScreen"]
 transform = Transform3D(1, 0, 0, 0, 0.0348992, 0.99939, 0, -0.99939, 0.0348992, -0.73747, 0.00730205, 0.222413)
-pixel_size = 0.007
 text = "[P.R.N]
 Please enter your legal name:
 "

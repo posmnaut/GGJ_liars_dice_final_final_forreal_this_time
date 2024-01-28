@@ -49,7 +49,7 @@ public partial class Warden : Node3D
         PWB1Audio = GetTree().Root.GetChild(0).GetChild(2).GetChild<AudioStreamPlayer3D>(5);
         PWB2Audio = GetTree().Root.GetChild(0).GetChild(2).GetChild<AudioStreamPlayer3D>(6);
 
-        playerCam = GetTree().Root.GetChild(0).GetChild<PlayerCamera>(1);
+        playerCam = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild<PlayerCamera>(0);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,5 +1,12 @@
 AnimationPlayer
 Node3D
+SubViewport
+Container
+Control
+Camera3D
+CanvasLayer
+SubViewportContainer
+ShaderGlobalsOverride
 MeshInstance3D
 Node
 ImporterMeshInstance3D
