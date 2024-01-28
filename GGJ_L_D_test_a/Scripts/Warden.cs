@@ -44,7 +44,7 @@ public partial class Warden : Node3D
     public override void _Ready()
     {
         wardenLabel = GetTree().Root.GetChild(0).GetChild(2).GetChild<Label3D>(0);
-        wardenLabel.Text = "Hit \"enter\", and we can get this show on the road!";
+        wardenLabel.Text = "Hit \"enter\" and then \"space\", and we can get this show on the road!";
         wardenLabel.Visible = true;
 
         allTimer = GetTree().Root.GetChild(0).GetChild(2).GetChild<Timer>(1);
@@ -81,9 +81,13 @@ public partial class Warden : Node3D
     public void _on_dice_round_two_start(bool playerWonRound){
         if(playerWonRound == true){
             GD.Print("Oh shucks I lost. Good job! Let's spice it up!");
+            wardenLabel.Text = "Oh shucks I lost. Good job! Let's spice it up!";
+            allTimer.Start();
         }
         else{
             GD.Print("You lost? I'm sorry. Let's spice it up!");
+            wardenLabel.Text = "You lost? I'm sorry. Let's spice it up!";
+            allTimer.Start();
         }
         dieArray = new int[5];
         initialBid = true;
@@ -92,9 +96,13 @@ public partial class Warden : Node3D
     public void _on_dice_round_three_start(bool playerWonRound){
         if(playerWonRound == true){
             GD.Print("Oh shucks I lost. Good job! Let's spice it up EVEN MORE!");
+            wardenLabel.Text = "Oh shucks I lost. Good job! Let's spice it up EVEN MORE!";
+            allTimer.Start();
         }
         else{
             GD.Print("You lost? I'm sorry. Let's spice it up EVEN MORE!");
+            wardenLabel.Text = "You lost? I'm sorry. Let's spice it up EVEN MORE!";
+            allTimer.Start();
         }
         dieArray = new int[5];
         initialBid = true;
