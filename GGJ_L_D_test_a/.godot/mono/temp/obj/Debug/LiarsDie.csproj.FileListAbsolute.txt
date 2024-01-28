@@ -34,3 +34,15 @@ E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.dll
 E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\refint\LiarsDie.dll
 E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.pdb
 E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\ref\LiarsDie.dll
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\bin\Debug\LiarsDie.deps.json
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\bin\Debug\LiarsDie.dll
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\bin\Debug\LiarsDie.pdb
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.csproj.AssemblyReference.cache
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.GeneratedMSBuildEditorConfig.editorconfig
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.AssemblyInfoInputs.cache
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.AssemblyInfo.cs
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.csproj.CoreCompileInputs.cache
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.dll
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\refint\LiarsDie.dll
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.pdb
+D:\Godot Projects\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\ref\LiarsDie.dll

@@ -1,4 +1,5 @@
 res://default_env.tres
 res://Scenes/Main.tscn
 res://Scenes/Main.gdshader
-res://Scenes/Main_posm.gd
+res://Resources/Real-Scene/Tables-diffuse.tres
+res://Scenes/StartGame.tscn
