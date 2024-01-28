@@ -1,4 +1,7 @@
-AnimationPlayer
+Sprite3D
+TextureRect
+Decal
+DirectionalLight3D
 Node3D
 SubViewport
 Container
@@ -10,4 +13,3 @@ ShaderGlobalsOverride
 MeshInstance3D
 Node
 ImporterMeshInstance3D
-DirectionalLight3D

@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/StartGame.cs" id="1"]
 [ext_resource type="AudioStream" uid="uid://dc24iexa30sdm" path="res://Resources/ThemeTest1.wav" id="2"]
-
-[sub_resource type="PlaneMesh" id="10"]
+[ext_resource type="Texture2D" uid="uid://6h41kwrtc1c8" path="res://Resources/dithered-image_4.png" id="2_r07tk"]
 
 [sub_resource type="PlaneMesh" id="11"]
 
@@ -37,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Background/StartScreen/LegalNameLabel:modulate")
+tracks/2/path = NodePath("Background/Sprite3D/LegalNameLabel:modulate")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -61,43 +60,31 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Background/StartScreen:transform")
-tracks/4/interp = 2
+tracks/4/path = NodePath("Background/BackWall:position")
+tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2, 2.1, 2.2, 2.3, 2.5, 2.6, 2.8, 2.9, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Transform3D(1, 0, 0, 0, 0.731354, -0.681999, 0, 0.681999, 0.731354, 0, 0.19748, -0.737005), Transform3D(1, 0, 0, 0, 0.731354, -0.681999, 0, 0.681999, 0.731354, 0, 0.19748, -0.737005), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, 0.116526, -0.684011), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, 0.116526, -0.684011), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, -0.0933954, -0.493297), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, -0.0933954, -0.493297), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, -0.398883, -0.172383), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, -0.398883, -0.172383), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, -0.61654, -0.0265646), Transform3D(1, 0, 0, 0, 0.731355, -0.681999, 0, 0.681999, 0.731355, 0, -2.14741, 0.872312)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Background/BackWall:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 2.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.0125381, 0.376839, -1.40638), Vector3(-0.0125381, 0.376839, -1.40638), Vector3(-0.0125381, -3.35946, -2.40752)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background/Sprite3D:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.19748, -0.737005), Vector3(0, 0.19748, -0.737005), Vector3(0, -2.47458, 1.14275), Vector3(0, -7.90507, 0.354999)]
+}
 
 [sub_resource type="Animation" id="14"]
 resource_name = "PaperFall"
 length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background/StartScreen:transform")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(2, 3),
-"transitions": PackedFloat32Array(0.406125, 1),
-"update": 0,
-"values": [Transform3D(1, 0, 0, 0, -5.96046e-08, -1, 0, 1, -5.96046e-08, 0, 2.42414, -0.140372), Transform3D(1, 0, 0, 0, 0.731354, -0.681999, 0, 0.681999, 0.731354, 0, 0.19748, -0.737005)]
-}
 
 [sub_resource type="Animation" id="13"]
 length = 0.001
@@ -128,7 +115,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Background/StartScreen/LegalNameLabel:modulate")
+tracks/2/path = NodePath("Background/Sprite3D/LegalNameLabel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -140,7 +127,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Background/StartScreen/LegalNameLabel:text")
+tracks/3/path = NodePath("Background/Sprite3D/LegalNameLabel:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -164,26 +151,26 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Background/StartScreen:transform")
+tracks/5/path = NodePath("Background/BackWall:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Transform3D(1, 0, 0, 0, 0.731354, -0.681999, 0, 0.681999, 0.731354, 0, 2.47405, -0.126999)]
+"values": [Vector3(-0.0125381, 0.376839, -1.40638)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Background/BackWall:position")
+tracks/6/path = NodePath("Background/Sprite3D:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.0125381, 0.376839, -1.40638)]
+"values": [Vector3(0, 0.19748, -0.737005)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m3tmy"]
@@ -200,21 +187,21 @@ script = ExtResource("1")
 [node name="Background" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0)
 
-[node name="StartScreen" type="MeshInstance3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 0.731354, -0.681999, 0, 0.681999, 0.731354, 0, 2.47405, -0.126999)
-mesh = SubResource("10")
-skeleton = NodePath("")
+[node name="Sprite3D" type="Sprite3D" parent="Background"]
+transform = Transform3D(0.32, 0, 0, 0, 0.218239, 0.234033, 0, -0.234033, 0.218239, 0, 0.19748, -0.737005)
+texture = ExtResource("2_r07tk")
 
-[node name="LegalNameLabel" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, -0.0523361, 0.998627, 0, -0.998627, -0.0523361, 0.0691844, 0.00335002, 0.453165)
+[node name="LegalNameLabel" type="Label3D" parent="Background/Sprite3D"]
+transform = Transform3D(3.125, 0, 0, 0, 3.12071, 0.16355, 0, -0.16355, 3.12071, 1.00859, -2.06205, -0.235919)
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(0, 0, 0, 0)
 text = "TEMPORARY"
 font_size = 17
 uppercase = true
 
-[node name="ActualPrintLabel" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, -0.018116, 0.999833, 0, -0.999833, -0.018116, -0.729572, 0.0110409, -0.266713)
+[node name="ActualPrintLabel" type="Label3D" parent="Background/Sprite3D"]
+transform = Transform3D(3.125, 0, 0, 0, 3.12448, 0.0566128, 0, -0.0566128, 3.12448, -2.27991, 0.833479, 0.0345027)
+visible = false
 pixel_size = 0.001
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 1)
@@ -245,21 +232,22 @@ autowrap_mode = 2
 justification_flags = 161
 width = 1500.0
 
-[node name="FinePrintLabel" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, 0.0348985, 0.99939, 0, -0.99939, 0.0348985, -0.426635, 0.0128568, -0.712067)
+[node name="FinePrintLabel" type="Label3D" parent="Background/Sprite3D"]
+transform = Transform3D(3.125, 0, 0, 0, 3.1231, -0.109058, 0, 0.109058, 3.1231, -1.33323, 2.22521, 0.0401773)
+visible = false
 text = "Fine Print:"
 
-[node name="EnterNameLabel" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, 0.0348992, 0.99939, 0, -0.99939, 0.0348992, -0.73747, 0.00730205, 0.222413)
-text = "[P.R.N]
-Please enter your legal name:
+[node name="EnterNameLabel" type="Label3D" parent="Background/Sprite3D"]
+transform = Transform3D(3.125, 0, 0, 0, 3.1231, -0.109059, 0, 0.109059, 3.1231, -2.64814, -1.04436, 0.208554)
+visible = false
+text = "Please enter your legal name:
 "
 font_size = 17
 horizontal_alignment = 0
 autowrap_mode = 2
 
-[node name="Signature" type="Label3D" parent="Background/StartScreen"]
-transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, -0.227231, 0.00183105, 0.450243)
+[node name="Signature" type="Label3D" parent="Background/Sprite3D"]
+transform = Transform3D(3.125, 0, 0, 0, 3.125, 3.57628e-07, 0, -3.57628e-07, 3.125, 0.118267, -2.05979, -0.283584)
 pixel_size = 0.007
 outline_modulate = Color(0, 0, 0, 0)
 text = "Signature:________________"

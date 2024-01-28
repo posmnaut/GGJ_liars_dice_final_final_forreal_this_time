@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://285km871d07"]
+
+[resource]
+resource_name = "Lights-emmission"
+cull_mode = 2
+albedo_color = Color(0.880234, 0.906335, 0.690253, 1)
+roughness = 0.5
