@@ -30,6 +30,11 @@ public partial class Dice : Node3D
     AudioStreamPlayer3D cupShakeAudio;
     Label3D freqLabel;
     Label3D faceLabel;
+    AnimationPlayer animation1;
+    AnimationPlayer animation2;
+    AnimationPlayer animation3;
+    AnimationPlayer animation4;
+    AnimationPlayer animation5;
 
     Warden warden;
     PlayerCamera playerCam;
@@ -42,6 +47,12 @@ public partial class Dice : Node3D
         dieLab3 = GetTree().Root.GetChild(0).GetChild(3).GetChild<Label3D>(2);
         dieLab4 = GetTree().Root.GetChild(0).GetChild(3).GetChild<Label3D>(3);
         dieLab5 = GetTree().Root.GetChild(0).GetChild(3).GetChild<Label3D>(4);
+
+        animation1 = GetTree().Root.GetChild(0).GetChild(3).GetChild(0).GetChild<AnimationPlayer>(1);
+        animation2 = GetTree().Root.GetChild(0).GetChild(3).GetChild(1).GetChild<AnimationPlayer>(1);
+        animation3 = GetTree().Root.GetChild(0).GetChild(3).GetChild(2).GetChild<AnimationPlayer>(1);
+        animation4 = GetTree().Root.GetChild(0).GetChild(3).GetChild(3).GetChild<AnimationPlayer>(1);
+        animation5 = GetTree().Root.GetChild(0).GetChild(3).GetChild(4).GetChild<AnimationPlayer>(1);
 
         dieLab1.Visible = false;
         dieLab2.Visible = false;
@@ -98,20 +109,32 @@ public partial class Dice : Node3D
 
     public void _on_player_camera_cup_lift(){
         for(int i = 0; i < playerDiceArray.Length; i++){
+            GD.Print(i + " " + playerDiceArray[i]);
             if(i == 0){
                 dieLab1.Visible = true;
+                string a1 = playerDiceArray[0].ToString();
+                animation1.Play("face" + a1);
+                GD.Print("face" + a1);
             }
             else if(i == 1){
                 dieLab2.Visible = true;
+                string a2 = playerDiceArray[1].ToString();
+                animation2.Play("face" + a2);
             }
             else if(i == 2){
                 dieLab3.Visible = true;
+                string a3 = playerDiceArray[2].ToString();
+                animation3.Play("face" + a3);
             }
             else if(i == 3){
                 dieLab4.Visible = true;
+                string a4 = playerDiceArray[3].ToString();
+                animation4.Play("face" + a4);
             }
             else if(i == 4){
                 dieLab5.Visible = true;
+                string a5 = playerDiceArray[4].ToString();
+                animation5.Play("face" + a5);
             }
         }
     }

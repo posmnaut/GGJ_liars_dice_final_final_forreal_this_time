@@ -193,6 +193,7 @@ texture = ExtResource("2_r07tk")
 
 [node name="LegalNameLabel" type="Label3D" parent="Background/Sprite3D"]
 transform = Transform3D(3.125, 0, 0, 0, 3.12071, 0.16355, 0, -0.16355, 3.12071, 1.00859, -2.06205, -0.235919)
+layers = 4
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(0, 0, 0, 0)
 text = "TEMPORARY"
@@ -274,8 +275,11 @@ libraries = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-offset_right = 1087.0
-offset_bottom = 864.0
+anchors_preset = -1
+anchor_right = 0.944
+anchor_bottom = 1.333
+offset_right = -0.488037
+offset_bottom = 0.215942
 max_length = 12
 
 [node name="QueueFreeTimer" type="Timer" parent="."]
