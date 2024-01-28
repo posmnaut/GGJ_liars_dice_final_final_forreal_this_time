@@ -1,3 +1,5 @@
+AnimatedSprite3D
+BoneAttachment3D
 AnimationPlayer
 Sprite3D
 TextureRect
@@ -11,4 +13,3 @@ Camera3D
 CanvasLayer
 SubViewportContainer
 ShaderGlobalsOverride
-MeshInstance3D
