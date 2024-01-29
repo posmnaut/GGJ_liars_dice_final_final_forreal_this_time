@@ -89,7 +89,9 @@ public partial class Warden : Node3D
             wardenLabel.Text = "You lost? I'm sorry. Let's spice it up!";
             allTimer.Start();
         }
-        dieArray = new int[5];
+        dieArray = new int[7];
+        dieArray[5] = 5;
+        dieArray[6] = 4;
         initialBid = true;
     }
 

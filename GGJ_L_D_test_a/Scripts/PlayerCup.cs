@@ -146,6 +146,13 @@ public partial class PlayerCup : StaticBody3D
 		playerCam.isCupShaking = true;
 	}
 
+	public void _on_player_camera_finger_cup_shaken(){
+		cupOrigTrans = this.Transform;
+		shakeTimer.Start();
+		freedInterp = true;
+		playerCam.isCupShaking = true;
+	}
+
 	public void _on_ShakeTimer_timeout(){
 		returnCup = true;
 	}

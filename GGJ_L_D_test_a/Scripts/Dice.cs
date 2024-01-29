@@ -22,6 +22,9 @@ public partial class Dice : Node3D
     public int roundNum = 1;
     bool playerWonRound;
     public int playerLifeCount = 3;
+    bool diceFell = false;
+    bool dicepreviouslyFell = false;
+
     Label3D dieLab1;
     Label3D dieLab2;
     Label3D dieLab3;
@@ -35,6 +38,8 @@ public partial class Dice : Node3D
     AnimationPlayer animation3;
     AnimationPlayer animation4;
     AnimationPlayer animation5;
+    AnimationPlayer animationf1;
+    AnimationPlayer animationf2;
 
     Warden warden;
     PlayerCamera playerCam;
@@ -53,6 +58,8 @@ public partial class Dice : Node3D
         animation3 = GetTree().Root.GetChild(0).GetChild(3).GetChild(2).GetChild<AnimationPlayer>(1);
         animation4 = GetTree().Root.GetChild(0).GetChild(3).GetChild(3).GetChild<AnimationPlayer>(1);
         animation5 = GetTree().Root.GetChild(0).GetChild(3).GetChild(4).GetChild<AnimationPlayer>(1);
+        animationf1 = GetTree().Root.GetChild(0).GetChild(3).GetChild(14).GetChild(0).GetChild<AnimationPlayer>(0);
+        animationf2 = GetTree().Root.GetChild(0).GetChild(3).GetChild(14).GetChild(1).GetChild<AnimationPlayer>(0);
 
         dieLab1.Visible = false;
         dieLab2.Visible = false;
@@ -80,6 +87,21 @@ public partial class Dice : Node3D
 
         cupShakeAudio.Play();
 
+        if(diceFell == false && roundNum == 2){
+            diceFell = true;
+            dicepreviouslyFell = true;
+            animationf1.Play("Falling");
+            animationf2.Play("Falling");
+            playerDiceArray = new int[7];
+        }
+        else if(dicepreviouslyFell == true && roundNum == 2){
+            playerDiceArray[5] = 5;
+            playerDiceArray[6] = 4;
+            for(int i = 0; i < playerDiceArray.Length-2; i++){
+            playerDiceArray[i] = ranNumGen.Next(1, 7);
+            }
+        }
+        else{
         for(int i = 0; i < playerDiceArray.Length; i++){
             playerDiceArray[i] = ranNumGen.Next(1, 7);
 
@@ -99,12 +121,21 @@ public partial class Dice : Node3D
                 // dieLab5.Text = playerDiceArray[i].ToString();
             }
         }
+        }
 
         // dieLab1.Text = ranNumGen.Next(1, 7).ToString();
         // dieLab2.Text = ranNumGen.Next(1, 7).ToString();
         // dieLab3.Text = ranNumGen.Next(1, 7).ToString();
         // dieLab4.Text = ranNumGen.Next(1, 7).ToString();
         // dieLab5.Text = ranNumGen.Next(1, 7).ToString();
+    }
+
+    public void _on_player_camera_finger_cup_shaken(){
+        cupShakeAudio.Play();
+
+        for(int i = 0; i < playerDiceArray.Length; i++){
+            playerDiceArray[i] = ranNumGen.Next(1, 7);
+        }
     }
 
     public void _on_player_camera_cup_lift(){

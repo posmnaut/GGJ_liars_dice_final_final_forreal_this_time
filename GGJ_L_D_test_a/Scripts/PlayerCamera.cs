@@ -18,6 +18,8 @@ public partial class PlayerCamera : Camera3D
     public delegate void SubmitInputHandlerEventHandler();
     [Signal]
     public delegate void BluffInputHandlerEventHandler(int previousHighestFreq, int previousHighestFace);
+    [Signal]
+    public delegate void FingerCupShakenEventHandler();
 
     Camera3D cameraNode;
 
@@ -35,6 +37,10 @@ public partial class PlayerCamera : Camera3D
     Node3D lookAtLeft;
     Timer warderDecideTimer;
     Dice diceClass;
+    AnimatedSprite2D fingerSprite;
+    // VideoStreamPlayer endingVid;
+    int playerHealth = 5;
+    bool isFingerCut = true;
 
     float interpolationDur = 0.0f;
     public bool isInterpolating = false;
@@ -45,6 +51,7 @@ public partial class PlayerCamera : Camera3D
     int previousHighestFace = 0;
     public int playfreqBid = 1;
     public int playfaceBid = 1;
+    bool isFalling = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -65,16 +72,20 @@ public partial class PlayerCamera : Camera3D
         //-> pressed.
         lookAtLeft = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild<Node3D>(1);
 
+        fingerSprite = GetTree().Root.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetChild<AnimatedSprite2D>(0);
+
         //The "Warden"s `decideTimer`, this will be used to let us know when the player ->
         //-> can make actions again.
         warderDecideTimer = GetTree().Root.GetChild(0).GetChild(2).GetChild<Timer>(3);
 
         diceClass = GetTree().Root.GetChild(0).GetChild<Dice>(3);
+        // endingVid = GetTree().Root.GetChild(0).GetChild(15).GetChild<VideoStreamPlayer>(0);
     }
 
  // Called every frame. 'delta' is the elapsed time since the previous frame.
  public override void _Process(double delta)
  {
+    // GD.Print(isFingerCut);
     // GD.Print(this.Translation);
     // GD.Print("FACE: " + playfaceBid);
     // GD.Print("FREQ: " + playfreqBid);
@@ -95,6 +106,17 @@ public partial class PlayerCamera : Camera3D
                 // isInterpolating = false;
                 lockedInRound = true; 
             }
+
+            if(Input.IsActionJustPressed("finger_off") && turningDirect == 0 && playerHealth >= 0 && isCupShaking == false && isFingerCut == true){
+            if(turnDownFlag == false){
+                isFingerCut = false;
+                EmitSignal("FingerCupShaken");
+                isInterpolating = true;
+                playerHealth -= 1;
+                fingerSprite.Play(playerHealth + "HP");
+                GD.Print(playerHealth);
+            }
+        }
 
             if(lockedInRound == false){
                 if(isInterpolating == false){
@@ -320,13 +342,24 @@ public partial class PlayerCamera : Camera3D
                 }
             }
         }
-    else if(diceClass.roundNum == 2){
+    else if(diceClass.roundNum == 2 && isFalling == false){
         if(Input.IsActionJustPressed("start_round")){
             GD.Print("I RAND");
             turningDirect = 0;
             // turnDownFlag = false;
             // isInterpolating = false;
             lockedInRound = true; 
+        }
+
+        if(Input.IsActionJustPressed("finger_off") && turningDirect == 0 && playerHealth >= 0 && isCupShaking == false && isFingerCut == true){
+            if(turnDownFlag == false){
+                isFingerCut = false;
+                EmitSignal("FingerCupShaken");
+                isInterpolating = true;
+                playerHealth -= 1;
+                fingerSprite.Play(playerHealth + "HP");
+                GD.Print(playerHealth);
+            }
         }
 
         if(lockedInRound == false){
@@ -560,6 +593,17 @@ public partial class PlayerCamera : Camera3D
             // turnDownFlag = false;
             // isInterpolating = false;
             lockedInRound = true; 
+        }
+
+        if(Input.IsActionJustPressed("finger_off") && turningDirect == 0 && playerHealth >= 0 && isCupShaking == false && isFingerCut == true){
+            if(turnDownFlag == false){
+                isFingerCut = false;
+                EmitSignal("FingerCupShaken");
+                isInterpolating = true;
+                playerHealth -= 1;
+                fingerSprite.Play(playerHealth + "HP");
+                GD.Print(playerHealth);
+            }
         }
 
         if(lockedInRound == false){
@@ -894,6 +938,7 @@ public partial class PlayerCamera : Camera3D
         playfaceBid = 1;
 
         bidRound = false;
+        isFingerCut = true;
     }
 
     //WARDEN WON BLUFF:
@@ -905,6 +950,7 @@ public partial class PlayerCamera : Camera3D
 
         //ADD: Revoke player priority next turn.
         bidRound = false;
+        isFingerCut = true;
     }
 
     public void _on_dice_round_two_start(bool playerWonRound){
@@ -915,6 +961,7 @@ public partial class PlayerCamera : Camera3D
             GD.Print("[1: Player Lost Round]");
         }
         bidRound = false;
+        isFalling = true;
     }
 
     public void _on_dice_round_three_start(bool playerWonRound){
@@ -925,6 +972,8 @@ public partial class PlayerCamera : Camera3D
             GD.Print("[2: Player Lost Round]");
         }
         bidRound = false;
+        GD.Print("AmPlaying");
+        // endingVid.Play();
     }
 
     public void _on_dice_game_end_player_win(){
@@ -933,5 +982,9 @@ public partial class PlayerCamera : Camera3D
 
     public void _on_dice_game_end_player_loss(){
 
+    }
+
+    public void _on_animation_player_animation_finished(StringName anim_name){
+        isFalling = false;
     }
 }

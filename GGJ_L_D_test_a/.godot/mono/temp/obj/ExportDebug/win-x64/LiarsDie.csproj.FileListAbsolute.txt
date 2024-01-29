@@ -1,0 +1,12 @@
+E:\LiarsDie4.0\.godot\mono\temp\bin\ExportDebug\win-x64\LiarsDie.deps.json
+E:\LiarsDie4.0\.godot\mono\temp\bin\ExportDebug\win-x64\LiarsDie.dll
+E:\LiarsDie4.0\.godot\mono\temp\bin\ExportDebug\win-x64\LiarsDie.pdb
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\LiarsDie.csproj.AssemblyReference.cache
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\LiarsDie.GeneratedMSBuildEditorConfig.editorconfig
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\LiarsDie.AssemblyInfoInputs.cache
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\LiarsDie.AssemblyInfo.cs
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\LiarsDie.csproj.CoreCompileInputs.cache
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\LiarsDie.dll
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\refint\LiarsDie.dll
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\LiarsDie.pdb
+E:\LiarsDie4.0\.godot\mono\temp\obj\ExportDebug\win-x64\ref\LiarsDie.dll

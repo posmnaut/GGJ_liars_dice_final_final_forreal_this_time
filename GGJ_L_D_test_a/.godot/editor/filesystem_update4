@@ -12,3 +12,4 @@ res://Scripts/PlayerCamera.cs
 res://Scripts/PlayerCup.cs
 res://Scripts/StartGame.cs
 res://Scripts/Warden.cs
+res://video_stream_player.tscn

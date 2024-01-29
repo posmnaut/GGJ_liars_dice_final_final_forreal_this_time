@@ -34,16 +34,3 @@ E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.dll
 E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\refint\LiarsDie.dll
 E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\LiarsDie.pdb
 E:\LiarsDie4.0\.godot\mono\temp\obj\Debug\ref\LiarsDie.dll
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\bin\Debug\LiarsDie.deps.json
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\bin\Debug\LiarsDie.dll
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\bin\Debug\LiarsDie.pdb
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.csproj.AssemblyReference.cache
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.AssemblyInfoInputs.cache
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.AssemblyInfo.cs
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.csproj.CoreCompileInputs.cache
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.sourcelink.json
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.dll
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\refint\LiarsDie.dll
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\LiarsDie.pdb
-C:\Users\Emily\Documents\GitHub\GGJ_liars_dice_final_final_forreal_this_time\GGJ_L_D_test_a\.godot\mono\temp\obj\Debug\ref\LiarsDie.dll

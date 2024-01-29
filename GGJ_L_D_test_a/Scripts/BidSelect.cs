@@ -19,6 +19,8 @@ public partial class BidSelect : Node3D
 	Random randNumGen = new Random();
 	AudioStreamPlayer3D SC1Audio;
 	AudioStreamPlayer3D SC2Audio;
+	AnimationPlayer faceIncAnim;
+	AnimationPlayer freqIncAnim;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,6 +28,8 @@ public partial class BidSelect : Node3D
 		SC1Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(5);
 		SC2Audio = GetTree().Root.GetChild(0).GetChild(4).GetChild<AudioStreamPlayer3D>(6);
 
+		faceIncAnim = GetTree().Root.GetChild(0).GetChild(4).GetChild(0).GetChild<AnimationPlayer>(3);
+		freqIncAnim = GetTree().Root.GetChild(0).GetChild(4).GetChild(2).GetChild<AnimationPlayer>(3);
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,8 +58,10 @@ public partial class BidSelect : Node3D
 		// }
 
 		if(@event.IsActionPressed("mouse_click")){
+			faceIncAnim.Play("Pressed");
 			// InputEventMouseButton mouseButtonEvent = (InputEventMouseButton) @event;
 			EmitSignal("FaceIncreaseInputHandler");
+			
 		}
 	}
 
@@ -68,6 +74,7 @@ public partial class BidSelect : Node3D
 
 	public void _on_FreqI_input_event(Node camera, InputEvent @event, Vector3 click_position, Vector3 click_normal, int shape_idx){
 		if(@event.IsActionPressed("mouse_click")){
+			freqIncAnim.Play("Pressed");
 			// InputEventMouseButton mouseButtonEvent = (InputEventMouseButton) @event;
 			EmitSignal("FreqIncreaseInputHandler");
 		}
