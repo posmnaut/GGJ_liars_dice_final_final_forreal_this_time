@@ -10,6 +10,10 @@ using System;
 //-> from firing if the "Warden" calls a bluff.
 
 //5.) It's when he calls bluff on me after I already won a bluff and earned `playerFirst`.
+//FUTURE: 6.) If `Warden` just bid the same way the player did but without many matching ->
+//-> dice, then if he would be set to bid the same as the player again, instead he bids ->
+//-> his own way.
+//FUTURE: 7.) Much better way of showing that a new round has started. 
 
 
 public partial class Main : Node

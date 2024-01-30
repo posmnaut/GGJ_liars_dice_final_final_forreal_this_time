@@ -27,6 +27,6 @@ res://Resources/Real-Scene/Wallpieces-diffuse.tres::f17e766542412e12f9bda5ba04ad
 res://Resources/Real-Scene/Walls-Roof.tres::c03a57e04e29563f57e5d145f00b4105::1706453601::res://.godot/exported/133200997/export-1982daa62a567406d851549960a50332-Walls-Roof.res
 res://Resources/Real-Scene/Wires-diffuse.tres::9025ddafbbc47635739fde9d828f7585::1706453601::res://.godot/exported/133200997/export-d059d9602ef5f76466ed7793013368c6-Wires-diffuse.res
 res://Resources/BidSelect.tscn::518ee09e8c5f832d4cc6ac7bc34535e3::1706421223::res://.godot/exported/133200997/export-0e189b5f9da5392930f36e5fda7a0f87-BidSelect.scn
-res://Scenes/Main.tscn::2059664424892ce21fdd09fbb32d2809::1706482427::res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn
-res://Scenes/StartGame.tscn::a9d55da8305830521f6a8f679655cbfe::1706482427::res://.godot/exported/133200997/export-7a842d22e2a041a63c57239ec87d2108-StartGame.scn
-res://default_env.tres::d66999d0f38ecdfee0e56973e0284913::1706482427::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res
+res://Scenes/Main.tscn::1a6226b51f8736e14cf750866274dff2::1706570546::res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn
+res://Scenes/StartGame.tscn::a9d55da8305830521f6a8f679655cbfe::1706570547::res://.godot/exported/133200997/export-7a842d22e2a041a63c57239ec87d2108-StartGame.scn
+res://default_env.tres::d66999d0f38ecdfee0e56973e0284913::1706570547::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res

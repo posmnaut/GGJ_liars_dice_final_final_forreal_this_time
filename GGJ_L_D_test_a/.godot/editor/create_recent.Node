@@ -1,3 +1,5 @@
+AudioStreamPlayer3D
+AudioStreamPlayer
 SpotLight3D
 VideoStreamPlayer
 ResourcePreloader
@@ -11,5 +13,3 @@ AnimationTree
 Sprite3D
 TextureRect
 Decal
-DirectionalLight3D
-SubViewport

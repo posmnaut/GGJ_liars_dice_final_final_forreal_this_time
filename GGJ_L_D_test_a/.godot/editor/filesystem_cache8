@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706482427
-default_env.tres::Environment::1201141252749600035::1706482427::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1706478729::0::1::::<><>::
+::res://::1706573708
+default_env.tres::Environment::1201141252749600035::1706572677::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1706570634::0::1::::<><>::
 icon.png::CompressedTexture2D::3001240521696526294::1706411608::1706411608::1::::<><>::
-::res://Resources/::1706472106
+::res://Resources/::1706485864
 BidSelect.tscn::PackedScene::8926327040553478463::1706421223::0::1::::<><>::res://Scripts/BidSelect.cs<>uid://bpltbw673selm::::res://Resources/ButtonModels/button-up2_UpDown-Button-diffuse.png<>uid://bvntb47huuv4k::::res://Resources/ButtonModels/button-down1_UpDown-Button-diffuse.png<>uid://dvvt3hyeecufs::::res://Resources/Demo-Scene/Demo-Scene_Buttons-diffuse.png<>uid://cujtjeaj508ff::::res://Resources/SubmitClicked1MP3.mp3<>uid://2l1u615dgjfj::::res://Resources/SubmitClicked2MP3.mp3<>uid://bclac467p11ex::::res://Resources/ButtonModels/Bluff-button_Buttons-diffuse.png
 BidSelecting1MP3.mp3::AudioStreamMP3::7848335755134830936::1706411604::1706411604::1::::<><>::
 CupLift2USE.mp3::AudioStreamMP3::2717636711728170794::1706411604::1706411604::1::::<><>::
@@ -24,7 +24,7 @@ SubmitClicked2MP3.mp3::AudioStreamMP3::1919422960967645303::1706411604::17064116
 ThemeMusicMP3.mp3::AudioStreamMP3::6260048048817492375::1706411606::1706411604::1::::<><>::
 ThemeMusicVGG.ogg::AudioStreamOggVorbis::2470141315264547859::1706411606::1706411604::1::::<><>::
 ThemeTest1.wav::AudioStreamWAV::7357153262518771586::1706411612::1706411606::1::::<><>::
-::res://Resources/ButtonAnimations/::1706471694
+::res://Resources/ButtonAnimations/::1706485856
 animation_player.tscn::PackedScene::-1::1706458612::0::1::::<><>::
 animation_player_a.tscn::PackedScene::-1::1706458802::0::1::::<><>::
 animation_player_b.tscn::PackedScene::-1::1706458803::0::1::::<><>::
@@ -67,7 +67,7 @@ Up-Down-Buttons.003.tres::StandardMaterial3D::7580385667420096296::1706402277::0
 Up-Down-Buttons.tres::StandardMaterial3D::9082219474213154348::1706402277::0::1::::<><>::uid://f63v7cil0yi1::::res://Resources/Demo-Scene_UpDown-Button-diffuse.png
 Walls.tres::StandardMaterial3D::8144287330147304972::1706402277::0::1::::<><>::uid://cc5txs30ioi4a::::res://Resources/Demo-Scene_DecalLeakingMossy (6).png
 WindowMan.tres::StandardMaterial3D::5708720308315580596::1706402277::0::1::::<><>::uid://darm26ormg1qt::::res://Resources/Demo-Scene_ch_factory_windows1.png
-::res://Resources/Finger/::1706478226
+::res://Resources/Finger/::1706485794
 comp.ogv::VideoStreamTheora::-1::1706478230::0::1::::<><>::
 right_hand_open_a_0HP.png::CompressedTexture2D::3546079597617006296::1706472279::1706472280::1::::<><>::
 right_hand_open_a_1HP.png::CompressedTexture2D::1328918005207452050::1706472163::1706472168::1::::<><>::
@@ -88,7 +88,7 @@ fuzzydice_dice_Emission.png::CompressedTexture2D::7430668354733294490::170645960
 fuzzydice_dice_Metallic-dice_Roughness.png::CompressedTexture2D::2279320182578255063::1706459602::1706459603::1::::<><>::
 fuzzydice_dice_Normal.png::CompressedTexture2D::8613202941086017554::1706459601::1706459603::1::::<><>::
 new_array_mesh.tres::ArrayMesh::7212614686273914658::1706481172::0::1::::<><>::uid://c3k6d3borho4q::::res://Resources/FuzzyDiceAndCups/cup_Cup-Diffuse.png
-::res://Resources/Music/::1706471694
+::res://Resources/Music/::1706573666
 BackgroundMusic1.wav::AudioStreamWAV::8633861153117960101::1706428904::1706482625::1::::<><>::
 BackgroundMusic-Reverb.wav::AudioStreamWAV::6879851040526085983::1706371101::1706482617::1::::<><>::
 BackgroundMusic.wav::AudioStreamWAV::1711535419600064028::1706298019::1706429023::1::::<><>::
@@ -108,6 +108,7 @@ DiceRoll6-Reverb.wav::AudioStreamWAV::9211013695292074074::1706370944::170642902
 DiceRoll6.wav::AudioStreamWAV::3095039871329311640::1706370273::1706429023::1::::<><>::
 DiceRoll7-Reverb.wav::AudioStreamWAV::3209671050529996191::1706370955::1706429023::1::::<><>::
 DiceRoll7.wav::AudioStreamWAV::7569171499977806972::1706370302::1706429023::1::::<><>::
+OGGBackgroundMusic.mp3::AudioStreamMP3::1783237930368126433::1706573566::1706573708::1::::<><>::
 RIP_Finger.wav::AudioStreamWAV::5618526026805912345::1706428904::1706428932::1::::<><>::
 Theme-Reverb.wav::AudioStreamWAV::7979188932750732315::1706371242::1706429024::1::::<><>::
 Theme.wav::AudioStreamWAV::1741297775871607923::1706281049::1706429024::1::::<><>::
@@ -144,17 +145,17 @@ robotspider-animations1_topshell_BaseColor.png::CompressedTexture2D::66723801833
 ::res://Resources/Spider-Model/faces/::1706471723
 TVstatic_scanlines_green_sprite_sheet.png::CompressedTexture2D::5854040773095403496::1706471553::1706471723::1::::<><>::
 TVstatic_scanlines_green_sprite_sheet_b.png::CompressedTexture2D::3798234528816820230::1706471553::1706471723::1::::<><>::
-::res://Scenes/::1706482427
-Main.gdshader::Shader::-1::1706482427::0::1::::<><>::
-Main.tscn::PackedScene::5668335750160806996::1706482427::0::1::::<><>::res://Scripts/Main.cs<>res://Scripts/PlayerCamera.cs<>res://Scripts/PlayerCup.cs<>uid://da03ye5bgyhu5::::res://Resources/FuzzyDiceAndCups/new_array_mesh.tres<>res://Scripts/Warden.cs<>res://Scripts/Dice.cs<>uid://4gfegqw7i7n1::::res://Resources/CupLift.mp3<>uid://b3vp0u38hwfs4::::res://Resources/CupShakeUSE.mp3<>uid://beypcyahu077c::::res://Resources/CupLift2USE.mp3<>uid://bqr0obj82m0hw::::res://Resources/Finger/right_hand_open_a_0HP.png<>uid://s60c5ydu5tje::::res://Resources/Finger/right_hand_open_a_1HP.png<>uid://dj217cm0ml1jg::::res://Resources/BidSelecting1MP3.mp3<>uid://cxagfbvfqd0y3::::res://Resources/Finger/right_hand_open_a_2HP.png<>uid://c7i8jj06bgp43::::res://Resources/PlayerWonBluff2MP3.mp3<>uid://clsetfqleiqly::::res://Resources/Finger/right_hand_open_a_3HP.png<>uid://d1mbm587tpb38::::res://Resources/PlayerWonBluff1MP3.mp3<>uid://i6h4wk12s6k8::::res://Resources/Finger/right_hand_open_a_4HP.png<>uid://bgtkd4acb0wo1::::res://Scenes/StartGame.tscn<>res://Scripts/BidSelect.cs<>uid://bh75g83s0klmn::::res://Resources/Finger/right_hand_open_a_5HP.png<>uid://bpltbw673selm::::res://Resources/ButtonModels/button-up2_UpDown-Button-diffuse.png<>uid://dvvt3hyeecufs::::res://Resources/Demo-Scene/Demo-Scene_Buttons-diffuse.png<>uid://nwj6u7fmbfw3::::res://Resources/FuzzyDiceAndCups/diceblocks_dice_tex_PBR_Diffuse.png<>uid://bvntb47huuv4k::::res://Resources/ButtonModels/button-down1_UpDown-Button-diffuse.png<>uid://l2k4q018tsvp::::res://Resources/FuzzyDiceAndCups/diceblocks_dice_tex_PBR_Roughness.png<>uid://njvfl5rdq5s6::::res://Resources/FuzzyDiceAndCups/diceblocks_dice_tex_PBR_Bump.png<>uid://cujtjeaj508ff::::res://Resources/SubmitClicked1MP3.mp3<>uid://2l1u615dgjfj::::res://Resources/SubmitClicked2MP3.mp3<>uid://bclac467p11ex::::res://Resources/ButtonModels/Bluff-button_Buttons-diffuse.png<>res://Scenes/Main.gdshader<>uid://bwvd75764ukdo::::res://Resources/Real-Scene/Scene-Full_Walls-Floor-Diffuse.png<>res://Scripts/EnrichmentSpider.cs<>uid://binx48o0b7fh2::::res://Resources/Spider-Model/robotspider-animations1_body_BaseColor.png<>uid://738ohv35rsn1::::res://Resources/Real-Scene/Scene-Full_Table-Diffuse.png<>uid://i7plled8q6fu::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_BaseColor-dice_Alpha.png<>uid://1yksy1flqd03::::res://Resources/Real-Scene/Tables-diffuse.tres<>uid://d0xs6nsa6sj3l::::res://Resources/Spider-Model/robotspider-animations1_monitor_BaseColor.png<>uid://ct1l6057jay3c::::res://Resources/Real-Scene/Scene-Full_Wires-Diffuse.png<>uid://c2cfeksxn6ice::::res://Resources/Spider-Model/robotspider-animations1_topshell_BaseColor.png<>uid://df0urjhhshmfy::::res://Resources/Real-Scene/Scene-Full_Wall-pieces-Diffuse.png<>uid://dd4qa0vkgwmcw::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_Emission.png<>uid://cnklcgttrang7::::res://Resources/Spider-Model/robotspider-animations1_bottomshell_BaseColor.png<>uid://7qecnm1lednb::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_Metallic-dice_Roughness.png<>uid://bxphsn3ddcfqu::::res://Resources/Real-Scene/Scene-Full_1TV-Diffuse.png<>uid://duykgukl67o5o::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_Normal.png<>uid://cufn3d34w4f1i::::res://Resources/Spider-Model/robotspider-animations1_neck_BaseColor.png<>uid://bcu7i1g8scfvk::::res://Resources/Real-Scene/Scene-Full_3TVS-Diffuse.png<>uid://5wi77blphws::::res://Resources/Spider-Model/robotspider-animations1_leg1_BaseColor.png<>uid://rvc23lpbamuq::::res://Resources/Real-Scene/Scene-Full_florecent-light-Diffuse.png<>uid://ck6cq4l45thmp::::res://Resources/Spider-Model/robotspider-animations1_leg2_BaseColor.png<>uid://bme0py5prynyf::::res://Resources/Spider-Model/robotspider-animations1_leg4_BaseColor.png<>uid://by6cjq83l54qa::::res://Resources/Spider-Model/robotspider-animations1_fingers_BaseColor.png<>uid://kr0no30vjoki::::res://Resources/Spider-Model/robotspider-animations1_leg3_BaseColor.png<>res://Resources/Finger/comp.ogv
+::res://Scenes/::1706572677
+Main.gdshader::Shader::-1::1706572677::0::1::::<><>::
+Main.tscn::PackedScene::5668335750160806996::1706572677::0::1::::<><>::res://Scripts/Main.cs<>res://Scripts/PlayerCamera.cs<>res://Scripts/PlayerCup.cs<>uid://da03ye5bgyhu5::::res://Resources/FuzzyDiceAndCups/new_array_mesh.tres<>res://Scripts/Warden.cs<>res://Scripts/Dice.cs<>uid://4gfegqw7i7n1::::res://Resources/CupLift.mp3<>uid://b3vp0u38hwfs4::::res://Resources/CupShakeUSE.mp3<>uid://beypcyahu077c::::res://Resources/CupLift2USE.mp3<>uid://bqr0obj82m0hw::::res://Resources/Finger/right_hand_open_a_0HP.png<>uid://s60c5ydu5tje::::res://Resources/Finger/right_hand_open_a_1HP.png<>uid://dj217cm0ml1jg::::res://Resources/BidSelecting1MP3.mp3<>uid://cxagfbvfqd0y3::::res://Resources/Finger/right_hand_open_a_2HP.png<>uid://c7i8jj06bgp43::::res://Resources/PlayerWonBluff2MP3.mp3<>uid://clsetfqleiqly::::res://Resources/Finger/right_hand_open_a_3HP.png<>uid://d1mbm587tpb38::::res://Resources/PlayerWonBluff1MP3.mp3<>uid://i6h4wk12s6k8::::res://Resources/Finger/right_hand_open_a_4HP.png<>uid://bgtkd4acb0wo1::::res://Scenes/StartGame.tscn<>res://Scripts/BidSelect.cs<>uid://bh75g83s0klmn::::res://Resources/Finger/right_hand_open_a_5HP.png<>uid://bpltbw673selm::::res://Resources/ButtonModels/button-up2_UpDown-Button-diffuse.png<>uid://dvvt3hyeecufs::::res://Resources/Demo-Scene/Demo-Scene_Buttons-diffuse.png<>uid://nwj6u7fmbfw3::::res://Resources/FuzzyDiceAndCups/diceblocks_dice_tex_PBR_Diffuse.png<>uid://bvntb47huuv4k::::res://Resources/ButtonModels/button-down1_UpDown-Button-diffuse.png<>uid://l2k4q018tsvp::::res://Resources/FuzzyDiceAndCups/diceblocks_dice_tex_PBR_Roughness.png<>uid://njvfl5rdq5s6::::res://Resources/FuzzyDiceAndCups/diceblocks_dice_tex_PBR_Bump.png<>uid://cujtjeaj508ff::::res://Resources/SubmitClicked1MP3.mp3<>uid://2l1u615dgjfj::::res://Resources/SubmitClicked2MP3.mp3<>uid://bclac467p11ex::::res://Resources/ButtonModels/Bluff-button_Buttons-diffuse.png<>res://Scenes/Main.gdshader<>uid://bwvd75764ukdo::::res://Resources/Real-Scene/Scene-Full_Walls-Floor-Diffuse.png<>res://Scripts/EnrichmentSpider.cs<>uid://binx48o0b7fh2::::res://Resources/Spider-Model/robotspider-animations1_body_BaseColor.png<>uid://738ohv35rsn1::::res://Resources/Real-Scene/Scene-Full_Table-Diffuse.png<>uid://i7plled8q6fu::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_BaseColor-dice_Alpha.png<>uid://1yksy1flqd03::::res://Resources/Real-Scene/Tables-diffuse.tres<>uid://d0xs6nsa6sj3l::::res://Resources/Spider-Model/robotspider-animations1_monitor_BaseColor.png<>uid://ct1l6057jay3c::::res://Resources/Real-Scene/Scene-Full_Wires-Diffuse.png<>uid://c2cfeksxn6ice::::res://Resources/Spider-Model/robotspider-animations1_topshell_BaseColor.png<>uid://df0urjhhshmfy::::res://Resources/Real-Scene/Scene-Full_Wall-pieces-Diffuse.png<>uid://dd4qa0vkgwmcw::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_Emission.png<>uid://cnklcgttrang7::::res://Resources/Spider-Model/robotspider-animations1_bottomshell_BaseColor.png<>uid://7qecnm1lednb::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_Metallic-dice_Roughness.png<>uid://bxphsn3ddcfqu::::res://Resources/Real-Scene/Scene-Full_1TV-Diffuse.png<>uid://duykgukl67o5o::::res://Resources/FuzzyDiceAndCups/fuzzydice_dice_Normal.png<>uid://cufn3d34w4f1i::::res://Resources/Spider-Model/robotspider-animations1_neck_BaseColor.png<>uid://bcu7i1g8scfvk::::res://Resources/Real-Scene/Scene-Full_3TVS-Diffuse.png<>uid://5wi77blphws::::res://Resources/Spider-Model/robotspider-animations1_leg1_BaseColor.png<>uid://rvc23lpbamuq::::res://Resources/Real-Scene/Scene-Full_florecent-light-Diffuse.png<>uid://ck6cq4l45thmp::::res://Resources/Spider-Model/robotspider-animations1_leg2_BaseColor.png<>uid://bme0py5prynyf::::res://Resources/Spider-Model/robotspider-animations1_leg4_BaseColor.png<>uid://by6cjq83l54qa::::res://Resources/Spider-Model/robotspider-animations1_fingers_BaseColor.png<>uid://kr0no30vjoki::::res://Resources/Spider-Model/robotspider-animations1_leg3_BaseColor.png
 Main_posm.gd::GDScript::-1::1706471553::0::1::::<>Node<>::
-StartGame.tscn::PackedScene::2847390973428180326::1706482427::0::1::::<><>::res://Scripts/StartGame.cs<>uid://dc24iexa30sdm::::res://Resources/ThemeTest1.wav<>uid://6h41kwrtc1c8::::res://Resources/dithered-image_4.png
+StartGame.tscn::PackedScene::2847390973428180326::1706571640::0::1::::<><>::res://Scripts/StartGame.cs<>uid://dc24iexa30sdm::::res://Resources/ThemeTest1.wav<>uid://6h41kwrtc1c8::::res://Resources/dithered-image_4.png
 ::res://Scripts/::1706471694
-BidSelect.cs::CSharpScript::-1::1706424894::0::1::::<>Node3D<>::
-Dice.cs::CSharpScript::-1::1706482415::0::1::::<>Node3D<>::
+BidSelect.cs::CSharpScript::-1::1706484193::0::1::::<>Node3D<>::
+Dice.cs::CSharpScript::-1::1706571780::0::1::::<>Node3D<>::
 EnrichmentSpider.cs::CSharpScript::-1::1706425939::0::1::::<>Node3D<>::
-Main.cs::CSharpScript::-1::1706455360::0::1::::<>Node<>::
-PlayerCamera.cs::CSharpScript::-1::1706478510::0::1::::<>Camera3D<>::
+Main.cs::CSharpScript::-1::1706568958::0::1::::<>Node<>::
+PlayerCamera.cs::CSharpScript::-1::1706571863::0::1::::<>Camera3D<>::
 PlayerCup.cs::CSharpScript::-1::1706474999::0::1::::<>StaticBody3D<>::
 StartGame.cs::CSharpScript::-1::1706471553::0::1::::<>Node3D<>::
-Warden.cs::CSharpScript::-1::1706477359::0::1::::<>Node3D<>::
+Warden.cs::CSharpScript::-1::1706571914::0::1::::<>Node3D<>::

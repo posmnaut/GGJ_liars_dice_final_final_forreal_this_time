@@ -52,6 +52,7 @@ public partial class PlayerCamera : Camera3D
     public int playfreqBid = 1;
     public int playfaceBid = 1;
     bool isFalling = false;
+    int TOTAL_STARTGAME_DICE = 10;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -879,7 +880,7 @@ public partial class PlayerCamera : Camera3D
 
     //FREQ. INCREASE:
     public void _on_bid_select_freq_increase_input_handler(){
-        if(bidRound == true){
+        if(playfreqBid < TOTAL_STARTGAME_DICE && bidRound == true){
             playfreqBid += 1;
         }
     }
@@ -961,7 +962,8 @@ public partial class PlayerCamera : Camera3D
             GD.Print("[1: Player Lost Round]");
         }
         bidRound = false;
-        isFalling = true;
+        isInterpolating = false;
+        // isFalling = true;
     }
 
     public void _on_dice_round_three_start(bool playerWonRound){
@@ -972,7 +974,7 @@ public partial class PlayerCamera : Camera3D
             GD.Print("[2: Player Lost Round]");
         }
         bidRound = false;
-        GD.Print("AmPlaying");
+        isInterpolating = false;
         // endingVid.Play();
     }
 

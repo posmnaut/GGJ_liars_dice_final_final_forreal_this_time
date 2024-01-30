@@ -1,9 +1,9 @@
 res://default_env.tres
-res://Scenes/Main.tscn
+res://Scenes/StartGame.tscn
 res://Resources/FuzzyDiceAndCups/new_array_mesh.tres
 res://Scenes/Main.gdshader
 res://Resources/Real-Scene/Tables-diffuse.tres
-res://Scenes/StartGame.tscn
+res://Scenes/Main.tscn
 res://Scripts/BidSelect.cs
 res://Scripts/Dice.cs
 res://Scripts/EnrichmentSpider.cs
@@ -12,4 +12,3 @@ res://Scripts/PlayerCamera.cs
 res://Scripts/PlayerCup.cs
 res://Scripts/StartGame.cs
 res://Scripts/Warden.cs
-res://video_stream_player.tscn

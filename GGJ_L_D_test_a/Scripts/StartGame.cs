@@ -11,11 +11,13 @@ public partial class StartGame : Node3D
 	string playerName = "";
 	private StyleBoxFlat customStyleBox = new StyleBoxFlat();
 	bool firstPlayTheme = true;
+	int dbDropper = 0;
 	Label3D nameLabel;
 	LineEdit nameEdit;
 	AnimationPlayer animPlayer;
 	Timer qfTimer;
 	AudioStreamPlayer3D mainThemeAudio;
+    AudioStreamPlayer3D backgroundThemeAudio;
 	Node3D background;
 	PlayerCamera playerCam;
 
@@ -28,7 +30,8 @@ public partial class StartGame : Node3D
 		animPlayer = GetTree().Root.GetChild(0).GetChild(5).GetChild<AnimationPlayer>(1);
 		qfTimer = GetTree().Root.GetChild(0).GetChild(5).GetChild<Timer>(3);
 		mainThemeAudio = GetTree().Root.GetChild(0).GetChild(5).GetChild<AudioStreamPlayer3D>(4);
-		background = GetTree().Root.GetChild(0).GetChild(5).GetChild<Node3D>(0);
+		backgroundThemeAudio = GetTree().Root.GetChild(0).GetChild(5).GetChild<AudioStreamPlayer3D>(5);
+        background = GetTree().Root.GetChild(0).GetChild(5).GetChild<Node3D>(0);
 		nameEdit = GetTree().Root.GetChild(0).GetChild(5).GetChild<LineEdit>(2);
 
 		//NOTE: Text box now wont take up space.
@@ -46,24 +49,19 @@ public partial class StartGame : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		// if(playerName != "" && Input.IsActionJustPressed("start_round")){
-		//     playerCam.gameStart = false;
+		// if(firstPlayTheme == false && mainThemeAudio.GetPlaybackPosition() >= 14.40f){
+		// 	mainThemeAudio.Play(4.85f);
 		// }
-		// else{
-			
-		// }
-
-		// if(mainThemeAudio.Playing == false){
-		//     firstPlayTheme = false;
-		//     mainThemeAudio;
+		// else if(firstPlayTheme == true && mainThemeAudio.GetPlaybackPosition() >= 29.00f){
+		// 	firstPlayTheme = false;
+		// 	mainThemeAudio.Play(4.6f);
 		// }
 
-		if(firstPlayTheme == false && mainThemeAudio.GetPlaybackPosition() >= 14.40f){
-			mainThemeAudio.Play(4.85f);
-		}
-		else if(firstPlayTheme == true && mainThemeAudio.GetPlaybackPosition() >= 29.00f){
-			firstPlayTheme = false;
-			mainThemeAudio.Play(4.6f);
+		if(IsInstanceValid(qfTimer)){
+			if(qfTimer.TimeLeft > 0 && dbDropper%25 == 0){
+				mainThemeAudio.VolumeDb -= 5;
+			}
+			dbDropper -= 1;
 		}
 	}
 
@@ -86,7 +84,9 @@ public partial class StartGame : Node3D
 		animPlayer.QueueFree();
 		qfTimer.QueueFree();
 		nameEdit.QueueFree();
+		mainThemeAudio.QueueFree();
 
-		mainThemeAudio.VolumeDb = -40.0f;
+        backgroundThemeAudio.Play();
+		// mainThemeAudio.VolumeDb = -40.0f;
 	}
 }

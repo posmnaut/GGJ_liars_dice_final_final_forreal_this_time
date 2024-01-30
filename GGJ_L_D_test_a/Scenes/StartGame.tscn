@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgtkd4acb0wo1"]
+[gd_scene load_steps=10 format=3 uid="uid://bgtkd4acb0wo1"]
 
 [ext_resource type="Script" path="res://Scripts/StartGame.cs" id="1"]
 [ext_resource type="AudioStream" uid="uid://dc24iexa30sdm" path="res://Resources/ThemeTest1.wav" id="2"]
 [ext_resource type="Texture2D" uid="uid://6h41kwrtc1c8" path="res://Resources/dithered-image_4.png" id="2_r07tk"]
+[ext_resource type="AudioStream" uid="uid://0n2wyodo68t6" path="res://Resources/Music/OGGBackgroundMusic.mp3" id="4_3n0a8"]
 
 [sub_resource type="PlaneMesh" id="11"]
 
@@ -287,10 +288,15 @@ wait_time = 3.0
 one_shot = true
 
 [node name="MainTheme" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376135, -1.40376)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984703, 1.99881, -2.44462)
 stream = ExtResource("2")
 volume_db = -28.0
 autoplay = true
+
+[node name="BackgroundLoopTheme" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984703, 1.99881, -2.44462)
+stream = ExtResource("4_3n0a8")
+volume_db = -30.0
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_LineEdit_text_entered"]

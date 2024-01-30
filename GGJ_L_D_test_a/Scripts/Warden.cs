@@ -82,32 +82,42 @@ public partial class Warden : Node3D
         if(playerWonRound == true){
             GD.Print("Oh shucks I lost. Good job! Let's spice it up!");
             wardenLabel.Text = "Oh shucks I lost. Good job! Let's spice it up!";
+            playerFirst = true;
             allTimer.Start();
         }
         else{
             GD.Print("You lost? I'm sorry. Let's spice it up!");
             wardenLabel.Text = "You lost? I'm sorry. Let's spice it up!";
+            playerFirst = false;
             allTimer.Start();
         }
         dieArray = new int[7];
         dieArray[5] = 5;
         dieArray[6] = 4;
         initialBid = true;
+        TOTAL_DICE = 10;
+        highestFace = 1;
+        highestFreq = 1;
     }
 
     public void _on_dice_round_three_start(bool playerWonRound){
         if(playerWonRound == true){
             GD.Print("Oh shucks I lost. Good job! Let's spice it up EVEN MORE!");
             wardenLabel.Text = "Oh shucks I lost. Good job! Let's spice it up EVEN MORE!";
+            playerFirst = true;
             allTimer.Start();
         }
         else{
             GD.Print("You lost? I'm sorry. Let's spice it up EVEN MORE!");
             wardenLabel.Text = "You lost? I'm sorry. Let's spice it up EVEN MORE!";
+            playerFirst = false;
             allTimer.Start();
         }
         dieArray = new int[5];
         initialBid = true;
+        TOTAL_DICE = 10;
+        highestFace = 1;
+        highestFreq = 1;
     }
 
     public void _on_dice_game_end_player_win(){
@@ -386,16 +396,16 @@ public partial class Warden : Node3D
             //-> "Warden" increase its bid frequency (`highestFreq`) by.
             float anteChance = GD.Randf();
 
-            if(anteChance < 0.1f){
+            if(anteChance < 0.1f + TOTAL_DICE/100 && playerFirst == false){
                 bidIncrease = 0;
             }
-            else if(anteChance < 0.15f){
+            else if(anteChance < 0.15f + TOTAL_DICE/100){
                 bidIncrease = 4;
             }
-            else if(anteChance < 0.3f){
+            else if(anteChance < 0.3f + TOTAL_DICE/100){
                 bidIncrease = 3;
             }
-            else if(anteChance < 0.6f){
+            else if(anteChance < 0.6f + TOTAL_DICE/100){
                 bidIncrease = 2;
             }
             else{
@@ -428,10 +438,10 @@ public partial class Warden : Node3D
                 // else if(anteChance < 0.2f){
                 //     bidIncrease = 4;
                 // }
-                else if(anteChance < 0.2f){
+                else if(anteChance < 0.2f + TOTAL_DICE/100){
                     bidIncrease = 3;
                 }
-                else if(anteChance < 0.6f){
+                else if(anteChance < 0.6f + TOTAL_DICE/100){
                     bidIncrease = 2;
                 }
                 else{
@@ -483,7 +493,13 @@ public partial class Warden : Node3D
                 //NOTE: Below `if-statement` is for calling bluff on previous bid. First ->
                 //-> a certain requirment must be met for there to be the possibility of ->
                 //-> a bluff being made by the "Warden".
-                if((((float)playerCam.playfreqBid + intuitionIncrease)/TOTAL_DICE) > 0.5f){
+                //NOTE: A second requirment is if the only higher bid would make the ->
+                //-> `freq` be higher than the actual number of dice in the game. This ->
+                //-> will prevent the `Warden` from making bids with a frequency that the ->
+                //-> player cannot make or match (this is because a `freq` limit was just ->
+                //-> added to the player to preven the player from making bids greater ->
+                //-> than the total dice in the game).
+                if((((float)playerCam.playfreqBid + intuitionIncrease)/TOTAL_DICE) > 0.5f || highestFreq > 10){
                     float bluffChance = GD.Randf();
                     GD.Print("BLUFF CHANCE: " + bluffChance);
                     //NOTE: First `if-statement` is for weeding at the completely ->
@@ -497,9 +513,13 @@ public partial class Warden : Node3D
                     //-> "Warden" does not have enough of that face dice to reach the ->
                     //-> player's bid frequency.
                     if(playerCam.playfreqBid - freqArray[playerCam.playfaceBid] > 5){
+                        highestFace = 1;
+                        highestFreq = 1;
                         EmitSignal("WBluff");
                     }
                     else if(bluffChance > 0.4f){
+                        highestFace = 1;
+                        highestFreq = 1;
                         EmitSignal("WBluff");
                     }
                     else{

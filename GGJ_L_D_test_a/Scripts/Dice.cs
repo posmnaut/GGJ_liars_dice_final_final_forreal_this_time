@@ -183,8 +183,15 @@ public partial class Dice : Node3D
     //Player calls bluff:
     public void _on_PlayerCamera_BluffInputHandler(int wardenFreq, int wardenFace){
         int[] totalFreqArray = new int[6];
+        if(roundNum == 2){
+            totalFreqArray = new int[8];
+        }
+
         for(int i = 0; i < playerDiceArray.Length; i++){
             int dieFaceP = playerDiceArray[i] - 1;//Subtract `1` to fit indicies better.
+            GD.Print("Bluff Dice face:" + dieFaceP);
+            GD.Print(totalFreqArray.Length);
+            GD.Print(playerDiceArray.Length);
             totalFreqArray[dieFaceP] += 1;
         }
 
@@ -263,6 +270,10 @@ public partial class Dice : Node3D
         // warden.wardenLabel.Text = "CALLING [REDACTED]'s BLUFF!";
         // warden.wardenLabel.Visible = true;
         int[] totalFreqArray = new int[6];
+        if(roundNum == 2){
+            totalFreqArray = new int[8];
+        }
+
         for(int i = 0; i < playerDiceArray.Length; i++){
             int dieFaceP = playerDiceArray[i] - 1;//Subtract `1` to fit indicies better.
             totalFreqArray[dieFaceP] += 1;
